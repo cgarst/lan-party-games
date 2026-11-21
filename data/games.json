@@ -1561,6 +1561,159 @@
         "checked": "2026-11-21"
       },
       "steam": "https://store.steampowered.com/app/563560/"
+    },
+    {
+      "name": "Command & Conquer: Tiberian Dawn",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 6,
+        "src": "pcgw"
+      },
+      "note": "Original 1995 C&C RTS",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Red Alert",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Original RTS with Counterpunch and Aftermath expansions",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Red_Alert",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Remastered Collection",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Remastered Tiberian Dawn and Red Alert, with their expansions",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer_Remastered_Collection",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Tiberian Sun",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Tiberian Sun and Firestorm expansion",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Tiberian_Sun",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Red Alert 2",
+      "genre": "strategy",
+      "coop": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Red Alert 2 and Yuri's Revenge",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Red_Alert_2",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Renegade",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 127,
+        "src": "pcgw"
+      },
+      "note": "First-person C&C multiplayer (Command & Conquer mode)",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Renegade",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Generals",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Modern-day RTS",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Generals",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Generals - Zero Hour",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Generals expansion",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Generals",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer 3: Kane's Wrath",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Tiberium Wars expansion",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer_3:_Tiberium_Wars",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Command & Conquer: Red Alert 3",
+      "genre": "strategy",
+      "coop": null,
+      "versus": {
+        "n": 6,
+        "src": "pcgw"
+      },
+      "note": "Red Alert 3 and Uprising",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer:_Red_Alert_3",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     }
   ],
   "removedNoLan": [
@@ -1575,6 +1728,7 @@
     "Heroes of Hammerwatch",
     "Earth Defense Force 5",
     "F.E.A.R. 3",
-    "Sons of the Forest"
+    "Sons of the Forest",
+    "Command & Conquer 4: Tiberian Twilight"
   ]
 }
