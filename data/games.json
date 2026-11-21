@@ -1214,6 +1214,28 @@
       }
     },
     {
+      "name": "The Forest",
+      "genre": "survival",
+      "coop": {
+        "n": 8,
+        "src": "reported",
+        "pin": true
+      },
+      "versus": null,
+      "note": "Open-world survival co-op, no versus",
+      "pcgwExempt": true,
+      "purchase": {
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/242760/"
+      },
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/The_Forest",
+        "lan": "unknown",
+        "checked": "2026-11-21",
+        "caveat": "unknown"
+      }
+    },
+    {
       "name": "V Rising",
       "genre": "survival",
       "coop": {

@@ -1180,5 +1180,19 @@
     "online": "true",
     "onlinePlayers": "32",
     "fetched": "2026-11-21"
+  },
+  "The Forest": {
+    "page": "The Forest",
+    "url": "https://www.pcgamingwiki.com/wiki/The_Forest",
+    "hasNetworkBlock": true,
+    "lan": "unknown",
+    "lanPlayers": "",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "hackable",
+    "localPlayers": "8",
+    "online": "true",
+    "onlinePlayers": "8",
+    "fetched": "2026-11-21"
   }
 }
