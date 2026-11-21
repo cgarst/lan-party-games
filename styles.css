@@ -34,7 +34,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { background: var(--bg); color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 120px; }
-body { margin: 0; font: 400 1rem/1.55 var(--body); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+body { transition: opacity var(--duration-fast) var(--ease-smooth-out); margin: 0; font: 400 1rem/1.55 var(--body); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
 h1, h2, h3, p, ol, dl, dd, dt { margin: 0; }
 ol { padding: 0; list-style: none; }
 a { color: var(--text); text-decoration-color: var(--line-hi); text-underline-offset: 3px; }
@@ -177,3 +177,7 @@ a.mod:hover { background: color-mix(in srgb, var(--g) 14%, transparent); }
 .net strong { color: var(--text); font-weight: 600; }
 .net-required { border-color: #FF8A7A; }
 .net-partial { border-color: #E3C99A; }
+
+/* The page is built by script, then revealed once, so nothing visibly moves after first paint. */
+html.loading body { opacity: 0; }
+html.loading .slot { animation: none; opacity: 0; }

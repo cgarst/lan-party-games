@@ -1,4 +1,5 @@
 (async () => {
+  const reveal = () => document.documentElement.classList.remove("loading");
   let GENRES, GAMES;
   try {
     const res = await fetch("data/games.json");
@@ -7,6 +8,7 @@
   } catch (err) {
     document.getElementById("result").textContent =
       "Couldn't load data/games.json. If you opened this file directly, serve the folder instead (for example: python -m http.server).";
+    reveal();
     return;
   }
   const PIP_CAP = 16;
@@ -267,4 +269,8 @@
   renderHero();
   renderSections();
   sync();
+
+  // Wait for web fonts (up to 1.5s) so text does not reflow after the reveal.
+  await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 1500))]);
+  requestAnimationFrame(reveal);
 })();
