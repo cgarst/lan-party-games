@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LAN party games by genre and player count</title>
+  <title>LGN LAN Party Catalog</title>
   <meta name="description" content="Every game on our LAN party machine, grouped by genre, with how many players each supports over a local network.">
   <script>document.documentElement.classList.add("loading");setTimeout(function(){document.documentElement.classList.remove("loading")},4000);</script>
   <meta name="theme-color" content="#0E1318">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230E1318'/%3E%3Crect x='5' y='5' width='9' height='9' fill='%23FF5A47'/%3E%3Crect x='18' y='5' width='9' height='9' fill='%233FD0C9'/%3E%3Crect x='5' y='18' width='9' height='9' fill='%23FFC531'/%3E%3Crect x='18' y='18' width='9' height='9' fill='%23A6E05A'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' shape-rendering='crispEdges'%3E%3Crect width='32' height='32' rx='4' fill='%230E1318'/%3E%3Crect x='4' y='5' width='24' height='17' fill='%23cfc6a8'/%3E%3Crect x='6' y='7' width='20' height='13' fill='%233fd0c9'/%3E%3Crect x='6' y='16' width='20' height='4' fill='%233a8f3a'/%3E%3Crect x='14' y='9' width='4' height='4' fill='%23e0a97a'/%3E%3Crect x='13' y='13' width='6' height='5' fill='%23ff5a47'/%3E%3Crect x='11' y='22' width='10' height='3' fill='%23cfc6a8'/%3E%3Crect x='8' y='25' width='16' height='2' fill='%23a79f86'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
         <p class="lead">Every game on our LAN party list, grouped by genre, with the largest co-op and versus lobby each one supports over a local network.</p>
         <dl class="stats" id="stats"></dl>
       </div>
-      <ol class="lobby" id="lobby" aria-hidden="true"></ol>
+      <section class="rpg" id="rpg" aria-label="LAN party simulator, a small game"></section>
     </div>
   </header>
 
@@ -68,5 +68,6 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="lanrpg.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
     return;
   }
   const PIP_CAP = 16;
-  const HEADCOUNTS = [2, 4, 8, 12, 16, 32, 64];
+  const HEADCOUNTS =[2, 4, 8, 12, 16, 32, 64];
   const MODES = [
     { id: "any", label: "Any" },
     { id: "coop", label: "Co-op" },
@@ -73,14 +73,6 @@
       box.append(el("dd", "stat-n", String(n)), el("dt", "stat-l", label));
       dl.append(box);
     });
-
-    const lobby = $("lobby");
-    for (let i = 0; i < PIP_CAP; i++) {
-      const li = el("li", "slot", "P" + (i + 1));
-      li.style.setProperty("--i", i);
-      li.style.setProperty("--g", GENRES[i % GENRES.length].color);
-      lobby.append(li);
-    }
   }
 
   // ---- Toolbar -----------------------------------------------------------
@@ -170,9 +162,16 @@
       a.setAttribute("aria-label", `${g.name} on ${site} (opens in a new tab)`);
       links.append(a);
     };
+    if (g.purchase && g.purchase.url) addLink("Buy on " + g.purchase.store, g.purchase.url, g.purchase.store);
+    if (g.steam) addLink("Steam (free)", g.steam, "Steam");
     if (g.pcgw) addLink("PCGamingWiki", g.pcgw.url, "PCGamingWiki");
     if (g.scripts) addLink("LAN scripts", g.scripts, "GitHub (LAN scripts)");
     art.append(modes);
+    if (g.purchase) {
+      const p = el("p", "net buy");
+      p.append(el("strong", "", "Purchase required"), document.createTextNode(" Buy it on " + g.purchase.store + " to play; every player needs a copy."));
+      art.append(p);
+    }
     if (g.internet) {
       const b = el("p", "net net-" + g.internet.level);
       b.append(el("strong", "", g.internet.level === "required" ? "Needs internet" : "Internet for sign-in or server"), document.createTextNode(" " + g.internet.note));
