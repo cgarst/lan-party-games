@@ -1296,6 +1296,10 @@
         "lan": "unknown",
         "checked": "2026-11-21",
         "caveat": "unknown"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
       }
     },
     {
