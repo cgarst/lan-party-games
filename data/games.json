@@ -1275,6 +1275,10 @@
         "lan": "unknown",
         "checked": "2026-11-21",
         "caveat": "unknown"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
       }
     },
     {
@@ -1310,6 +1314,10 @@
         "url": "https://www.pcgamingwiki.com/wiki/Fistful_of_Frags",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
       }
     },
     {
@@ -1346,6 +1354,10 @@
         "url": "https://www.pcgamingwiki.com/wiki/Moonbase_Alpha",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
       }
     },
     {
@@ -1378,6 +1390,10 @@
         "lan": "unknown",
         "checked": "2026-11-21",
         "caveat": "unknown"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
       }
     }
   ],
