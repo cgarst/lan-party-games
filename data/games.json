@@ -4,7 +4,8 @@
     "co-optimus": "Read from the game page on co-optimus.com",
     "checked": "Confirmed against another published source",
     "unverified": "Usual server limit; test before relying on it",
-    "config": "Read from our own server config on this machine"
+    "config": "Read from our own server config on this machine",
+    "reported": "Reported from hands-on experience with the game or mod"
   },
   "genres": [
     {
@@ -131,11 +132,11 @@
         "src": "config"
       },
       "versus": {
-        "n": 16,
-        "src": "config"
+        "n": 127,
+        "src": "reported"
       },
       "mod": "Community dedicated server for Halo 3 and ODST (MCC)",
-      "note": "Legendary campaign co-op, or a 60-game vote playlist",
+      "note": "Campaign co-op holds 16. Versus holds 127 on a dedicated server (128 in custom matches); our scripts cap it at 16",
       "via": "Standalone"
     },
     {

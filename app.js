@@ -19,6 +19,7 @@
   const SRC = {
     "co-optimus": { cls: "tag-co", label: "Co-Optimus", hint: "Read from the game's Co-Optimus page" },
     checked: { cls: "tag-chk", label: "Checked", hint: "Confirmed against another published source" },
+    reported: { cls: "tag-rep", label: "Reported", hint: "Reported from hands-on experience with the game or mod" },
     config: { cls: "tag-cfg", label: "Our config", hint: "Read from our own server config on this machine" },
     unverified: { cls: "tag-unv", label: "Unverified", hint: "Usual server limit; test before relying on it" }
   };
