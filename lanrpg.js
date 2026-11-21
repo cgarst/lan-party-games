@@ -133,7 +133,7 @@
       </div>
       <button type="button" class="rpg-pb rpg-pact" aria-label="Interact">E</button>
     </div>
-    <div class="rpg-top"><span class="rpg-clock"></span><span class="rpg-temp"></span><span class="rpg-speeds" role="group" aria-label="Game speed"></span><button type="button" class="rpg-sp rpg-fs">Fullscreen</button></div>
+    <div class="rpg-top"><span class="rpg-clock"></span><span class="rpg-temp"></span><span class="rpg-speeds" role="group" aria-label="Game speed"></span><button type="button" class="rpg-sp rpg-fs">Maximize</button></div>
     <p class="rpg-pcline"></p>
     <div class="rpg-meters"></div>
     <p class="rpg-hint">Walk: arrows / WASD or click. Interact: E or Space.</p>
@@ -1121,31 +1121,34 @@
     if (e.key === "Escape" && !dlgModal) { e.preventDefault(); closeDialog(); return; }
     if (/^[1-9]$/.test(e.key)) { const b = el.opts.children[Number(e.key) - 1]; if (b && !b.disabled) { e.preventDefault(); b.click(); } }
   });
-  // fullscreen (hidden where the browser lacks element fullscreen, e.g. iPhone Safari)
+  // maximized view: the minigame fills the browser window (not real fullscreen)
   const fsBtn = root.querySelector(".rpg-fs");
-  if (!root.requestFullscreen) fsBtn.hidden = true;
-  else {
-    fsBtn.addEventListener("click", () => {
-      if (document.fullscreenElement) document.exitFullscreen();
-      else root.requestFullscreen().catch(() => {});
-      canvas.focus({ preventScroll: true });
-    });
-    // integer-scale the canvas to the largest whole multiple that fits (falls back to fit-to-width when even 1x is too big)
-    const fitFs = () => {
-      if (document.fullscreenElement !== root) { canvas.style.width = canvas.style.height = ""; return; }
-      canvas.style.width = W + "px"; canvas.style.height = H + "px";
-      const scr = canvas.parentElement.getBoundingClientRect(), last = root.lastElementChild.getBoundingClientRect();
-      const chromeW = scr.width - W, chromeH = scr.height - H;
-      const below = Math.max(0, last.bottom - scr.bottom);
-      const cs = getComputedStyle(root), padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight), padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
-      const fit = Math.min((Math.min(root.clientWidth, 960) - padX - chromeW) / W, (root.clientHeight - padY - chromeH - below) / H);
-      const k = fit >= 1 ? Math.floor(fit) : 0;
-      if (k) { canvas.style.width = W * k + "px"; canvas.style.height = H * k + "px"; }
-      else { canvas.style.width = "100%"; canvas.style.height = "auto"; }
-    };
-    document.addEventListener("fullscreenchange", () => { fsBtn.textContent = document.fullscreenElement === root ? "Exit fullscreen" : "Fullscreen"; fitFs(); });
-    window.addEventListener("resize", fitFs);
+  const expanded = () => root.classList.contains("expanded");
+  // integer-scale the canvas to the largest whole multiple that fits (falls back to fit-to-width when even 1x is too big)
+  const fitFs = () => {
+    if (!expanded()) { canvas.style.width = canvas.style.height = ""; return; }
+    canvas.style.width = W + "px"; canvas.style.height = H + "px";
+    const scr = canvas.parentElement.getBoundingClientRect(), last = root.lastElementChild.getBoundingClientRect();
+    const chromeW = scr.width - W, chromeH = scr.height - H;
+    const below = Math.max(0, last.bottom - scr.bottom);
+    const cs = getComputedStyle(root), padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight), padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+    const fit = Math.min((Math.min(root.clientWidth, 960) - padX - chromeW) / W, (root.clientHeight - padY - chromeH - below) / H);
+    const k = fit >= 1 ? Math.floor(fit) : 0;
+    if (k) { canvas.style.width = W * k + "px"; canvas.style.height = H * k + "px"; }
+    else { canvas.style.width = "100%"; canvas.style.height = "auto"; }
+  };
+  function setExpanded(on) {
+    root.classList.toggle("expanded", on);
+    document.documentElement.classList.toggle("rpg-lock", on);
+    fsBtn.textContent = on ? "Restore" : "Maximize";
+    fsBtn.setAttribute("aria-pressed", String(on));
+    fitFs();
+    canvas.focus({ preventScroll: true });
   }
+  fsBtn.textContent = "Maximize";
+  fsBtn.addEventListener("click", () => setExpanded(!expanded()));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && expanded() && !dlgOpen) setExpanded(false); });
+  window.addEventListener("resize", fitFs);
   // touch controls (shown on coarse pointers via CSS)
   root.querySelectorAll(".rpg-pb[data-k]").forEach((b) => {
     const k = b.dataset.k;

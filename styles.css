@@ -86,11 +86,11 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .rpg-pb[data-k="ArrowUp"] { grid-area: up; } .rpg-pb[data-k="ArrowLeft"] { grid-area: left; } .rpg-pb[data-k="ArrowRight"] { grid-area: right; } .rpg-pb[data-k="ArrowDown"] { grid-area: down; }
 .rpg-pact { width: 84px; height: 84px; border-radius: 50%; background: #ffc531; color: #2b1d12; border-color: #2b1d12; }
 @media (pointer: coarse) { .rpg-pad { display: flex; } .rpg-hint { display: none; } }
-.rpg-fs[hidden] { display: none; }
-.rpg:fullscreen { background: var(--bg); padding: 12px; overflow: auto; display: flex; flex-direction: column; align-items: center; }
-.rpg:fullscreen > * { width: 100%; max-width: 960px; }
-.rpg:fullscreen .rpg-screen { width: auto; max-width: 100%; }
-.rpg:fullscreen .rpg-canvas { max-width: none; }
+.rpg-lock { overflow: hidden; }
+.rpg.expanded { position: fixed; inset: 0; z-index: 100; background: var(--bg); padding: 12px; overflow: auto; display: flex; flex-direction: column; align-items: center; }
+.rpg.expanded > * { width: 100%; max-width: 960px; }
+.rpg.expanded .rpg-screen { width: auto; max-width: 100%; }
+.rpg.expanded .rpg-canvas { max-width: none; }
 .rpg-top { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin-top: 12px; font: 600 0.9375rem/1.2 var(--display); }
 .rpg-clock { font-variant-numeric: tabular-nums; }
 .rpg-temp { color: var(--muted); }
