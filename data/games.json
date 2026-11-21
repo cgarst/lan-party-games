@@ -997,13 +997,13 @@
         "n": 8,
         "src": "pcgw"
       },
-      "note": "WWII RTS",
+      "note": "WWII RTS; the retail/legacy edition, which keeps LAN",
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Company_of_Heroes",
         "lan": "limited",
-        "checked": "2026-11-21",
-        "caveat": "limited"
-      }
+        "checked": "2026-11-21"
+      },
+      "assumeLegacy": true
     },
     {
       "name": "Warhammer 40,000: Dawn of War",
@@ -1013,13 +1013,13 @@
         "n": 8,
         "src": "pcgw"
       },
-      "note": "RTS",
+      "note": "RTS; the older release with LAN (the Steam and GOG versions dropped it)",
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Warhammer_40,000:_Dawn_of_War",
         "lan": "limited",
-        "checked": "2026-11-21",
-        "caveat": "limited"
-      }
+        "checked": "2026-11-21"
+      },
+      "assumeLegacy": true
     },
     {
       "name": "Dungeon Keeper 2",

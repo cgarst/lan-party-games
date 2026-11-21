@@ -25,6 +25,7 @@ for (const g of data.games) {
   if (!p || !p.page) { next.push(g); continue; }               // no PCGamingWiki page: leave as is
   g.pcgw = { url: p.url, lan: p.lan || "unknown", checked: p.fetched };
   if (p.lan !== "true") g.pcgw.caveat = p.lan || "unknown";      // "limited", "hackable", "unknown" or "false"
+  if (g.assumeLegacy) delete g.pcgw.caveat;                       // we have the older release that still has LAN
   if (g.pcgwExempt) { next.push(g); continue; }
   if (!KEEP.has(p.lan)) { removed.push(`${g.name} (LAN: ${p.lan || "blank"})`); continue; }
 

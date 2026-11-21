@@ -75,6 +75,10 @@ PCGamingWiki's single LAN count can be wrong for one mode (Left 4 Dead 2 holds 4
 
 Prefer a real source over `unverified`, and say what it was in the commit message.
 
+### Older versions with LAN
+
+When a newer release dropped LAN but an older one has it (Warhammer 40,000: Dawn of War on Steam, Company of Heroes' new Steam version), assume we have the older version. Set `"assumeLegacy": true` on the game: apply then ignores PCGamingWiki's `limited` caveat for it, and the note should say which release the count is for. Do not use this for limits that are not about version (for example a game that needs a mod or a console command to enable LAN).
+
 ### Internet dependencies
 
 Some games need internet even when the players are on one LAN. Flag them on the game with `"internet": { "level": "required" | "partial", "note": "..." }`:
