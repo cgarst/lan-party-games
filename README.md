@@ -12,8 +12,8 @@ The page loads `data/games.json`, so serve the folder rather than opening `index
 
 Everything lives in `data/games.json`.
 
-- `coop` / `versus`: `{ "n": <max players>, "src": "co-optimus" | "checked" | "reported" | "config" | "unverified" }`, or `null` if the game has no such mode.
-- `src` marks where a number came from. Co-Optimus only covers co-op games, so most entries are `unverified` (the usual server cap). Fix a number and change its `src` when you confirm it.
+- `coop` / `versus`: `{ "n": <max players>, "src": "pcgw" | "checked" | "reported" | "unverified" }`, or `null` if the game has no such mode.
+- `src` marks where a number came from. `pcgw` is PCGamingWiki, the canonical source; the other values are for numbers PCGamingWiki lacks. See AGENTS.md for how to refresh it.
 - Games with no multiplayer are left out.
 
 ## Publish

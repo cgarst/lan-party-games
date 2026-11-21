@@ -17,17 +17,20 @@
     { id: "versus", label: "Versus" }
   ];
   const SRC = {
-    "co-optimus": { cls: "tag-co", label: "Co-Optimus", hint: "Read from the game's Co-Optimus page" },
+    pcgw: { cls: "tag-pcgw", label: "PCGamingWiki", hint: "LAN player count from PCGamingWiki" },
     checked: { cls: "tag-chk", label: "Checked", hint: "Confirmed against another published source" },
     reported: { cls: "tag-rep", label: "Reported", hint: "Reported from hands-on experience with the game or mod" },
-    config: { cls: "tag-cfg", label: "Our config", hint: "Read from our own server config on this machine" },
     unverified: { cls: "tag-unv", label: "Unverified", hint: "Usual server limit; test before relying on it" }
   };
-  const coopUrl = (g) =>
-    g.coopUrl || "https://www.co-optimus.com/search.php?srchtext=" + encodeURIComponent(g.name);
   const MODE_LABEL = { coop: "Co-op", versus: "Versus" };
 
-  const state = { mode: "any", min: 0, genre: "all" };
+  const state = { mode: "any", min: 0, genre: "all", q: "" };
+  const norm = (s) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+  const matchesText = (g) => {
+    if (!state.q) return true;
+    const hay = norm([g.name, g.mod, g.note].filter(Boolean).join(" "));
+    return norm(state.q).split(" ").every((w) => hay.includes(w));
+  };
   const $ = (id) => document.getElementById(id);
   const el = (tag, cls, text) => {
     const n = document.createElement(tag);
@@ -130,18 +133,36 @@
     art.style.setProperty("--g", genreById[g.genre].color);
     art.dataset.name = g.name;
     const top = el("div", "card-top");
-    top.append(el("h3", "card-name", g.name), el("span", "via", g.via));
+    top.append(el("h3", "card-name", g.name));
     art.append(top);
-    if (g.mod) art.append(el("p", "mod", g.mod));
+    if (g.mod) {
+      if (g.modUrl) {
+        const m = el("a", "mod", g.mod);
+        m.href = g.modUrl;
+        m.target = "_blank";
+        m.rel = "noopener";
+        art.append(m);
+      } else art.append(el("p", "mod", g.mod));
+    }
     art.append(el("p", "note", g.note));
     const modes = el("div", "modes");
     modes.append(modeRow("coop", g.coop), modeRow("versus", g.versus));
-    const link = el("a", "co-link", g.coopUrl ? "Co-Optimus page" : "Search Co-Optimus");
-    link.href = coopUrl(g);
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.setAttribute("aria-label", `${g.name} on Co-Optimus (opens in a new tab)`);
-    art.append(modes, link);
+    const links = el("div", "links");
+    const addLink = (text, href, site) => {
+      const a = el("a", "ext-link", text);
+      a.href = href;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.setAttribute("aria-label", `${g.name} on ${site} (opens in a new tab)`);
+      links.append(a);
+    };
+    if (g.pcgw) addLink("PCGamingWiki", g.pcgw.url, "PCGamingWiki");
+    if (g.scripts) addLink("LAN scripts", g.scripts, "GitHub (LAN scripts)");
+    art.append(modes);
+    if (g.pcgw && g.pcgw.caveat) {
+      art.append(el("p", "caveat", g.pcgw.caveat === "limited" ? "PCGamingWiki lists LAN support as limited." : "PCGamingWiki says LAN needs extra setup."));
+    }
+    art.append(links);
     return art;
   }
 
@@ -182,7 +203,7 @@
 
       let visible = 0;
       entries.forEach(({ node, game }) => {
-        const ok = genreOk && relevant(game) > 0 && relevant(game) >= state.min;
+        const ok = genreOk && matchesText(game) && relevant(game) > 0 && relevant(game) >= state.min;
         const wasHidden = node.hidden;
         node.hidden = !ok;
         if (ok) {
@@ -208,12 +229,22 @@
     applyFilters();
   }
 
+  $("q").addEventListener("input", (e) => {
+    state.q = e.target.value;
+    applyFilters();
+  });
+
   $("reset").addEventListener("click", () => {
+    state.q = "";
+    $("q").value = "";
     state.mode = "any";
     state.min = 0;
     state.genre = "all";
     sync();
   });
+
+  const initial = new URLSearchParams(location.search).get("q");
+  if (initial) { state.q = initial; $("q").value = initial; }
 
   renderHero();
   renderSections();

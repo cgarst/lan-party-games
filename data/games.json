@@ -1,11 +1,10 @@
 {
   "generated": "2026-11-21",
   "sources": {
-    "co-optimus": "Read from the game page on co-optimus.com",
     "checked": "Confirmed against another published source",
     "unverified": "Usual server limit; test before relying on it",
-    "config": "Read from our own server config on this machine",
-    "reported": "Reported from hands-on experience with the game or mod"
+    "reported": "Reported from hands-on experience with the game or mod",
+    "pcgw": "PCGamingWiki, the canonical source for LAN player counts"
   },
   "genres": [
     {
@@ -57,48 +56,65 @@
       "genre": "arena",
       "coop": null,
       "versus": {
-        "n": 64,
-        "src": "unverified"
+        "n": 16,
+        "src": "pcgw"
       },
-      "note": "ioquake3 build, with a dedicated-server shortcut",
-      "via": "Standalone",
-      "mod": "ioquake3 source port"
+      "note": "Free-for-all, team and capture-the-flag modes",
+      "mod": "ioquake3 source port",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Quake_III_Arena",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "scripts": "https://github.com/cgarst/lanscript-quake3"
     },
     {
       "name": "Unreal Tournament",
       "genre": "arena",
       "coop": null,
       "versus": {
-        "n": 32,
-        "src": "unverified"
+        "n": 16,
+        "src": "pcgw"
       },
       "note": "GOTY edition",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Unreal_Tournament",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Unreal Tournament 2004",
       "genre": "arena",
       "coop": {
         "n": 32,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": {
         "n": 32,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Co-op is the Invasion mode against monsters",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Unreal_Tournament_2004",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Xonotic",
       "genre": "arena",
       "coop": null,
       "versus": {
-        "n": 64,
-        "src": "unverified"
+        "n": 255,
+        "src": "pcgw"
       },
       "note": "Open-source arena shooter",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Xonotic",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Halo Custom Edition",
@@ -108,9 +124,14 @@
         "n": 16,
         "src": "unverified"
       },
-      "note": "Same 16-player cap as stock; custom maps and dedicated server",
-      "via": "Standalone",
-      "mod": "Chimera-patched Halo CE with custom maps"
+      "note": "Custom maps and a dedicated server; same 16-player cap",
+      "mod": "Halo Custom Edition with the Chimera patch",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Halo:_Combat_Evolved",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "modUrl": "https://github.com/SnowyMouse/chimera"
     },
     {
       "name": "Halo Online",
@@ -118,26 +139,38 @@
       "coop": null,
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Halo 3-style multiplayer; no campaign",
-      "via": "Standalone",
-      "mod": "Community build (ElDewrito) of Halo Online"
+      "mod": "Community build (ElDewrito) of Halo Online",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Halo_Online",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Halo Project Reclaimer",
       "genre": "arena",
       "coop": {
         "n": 16,
-        "src": "config"
+        "src": "reported",
+        "pin": true
       },
       "versus": {
         "n": 127,
-        "src": "reported"
+        "src": "reported",
+        "pin": true
       },
       "mod": "Community dedicated server for Halo 3 and ODST (MCC)",
-      "note": "Campaign co-op holds 16. Versus holds 127 on a dedicated server (128 in custom matches); our scripts cap it at 16",
-      "via": "Standalone"
+      "note": "Campaign co-op holds 16. Versus holds 127 on a dedicated server (128 in custom matches)",
+      "pcgwExempt": true,
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Halo:_The_Master_Chief_Collection",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "scripts": "https://github.com/cgarst/reclaimer-lan"
     },
     {
       "name": "Jedi Knight Academy",
@@ -145,11 +178,15 @@
       "coop": null,
       "versus": {
         "n": 32,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "OpenJK engine; saber duels and free-for-all",
-      "via": "Standalone",
-      "mod": "OpenJK source port"
+      "mod": "OpenJK source port",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Star_Wars:_Jedi_Knight_-_Jedi_Academy",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Duskworld",
@@ -160,7 +197,11 @@
         "src": "unverified"
       },
       "note": "Dusk's multiplayer deathmatch",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Dusk",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Call of Juarez: Bound in Blood",
@@ -168,43 +209,45 @@
       "coop": null,
       "versus": {
         "n": 12,
-        "src": "checked"
+        "src": "pcgw"
       },
       "note": "Western deathmatch modes; the campaign is single-player",
-      "via": "Standalone"
-    },
-    {
-      "name": "Altitude",
-      "genre": "arena",
-      "coop": null,
-      "versus": {
-        "n": 16,
-        "src": "unverified"
-      },
-      "note": "2D plane combat with team objectives",
-      "via": "Steam"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Call_of_Juarez:_Bound_in_Blood",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Counter-Strike 2",
       "genre": "tactical",
       "coop": null,
       "versus": {
-        "n": 64,
-        "src": "unverified"
+        "n": 10,
+        "src": "pcgw"
       },
       "note": "Community-server cap; competitive modes are 5v5",
-      "via": "Steam"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Counter-Strike_2",
+        "lan": "limited",
+        "checked": "2026-11-21",
+        "caveat": "limited"
+      }
     },
     {
       "name": "Counter-Strike: Source",
       "genre": "tactical",
       "coop": null,
       "versus": {
-        "n": 64,
-        "src": "unverified"
+        "n": 128,
+        "src": "pcgw"
       },
-      "note": "Also has a Gungame shortcut",
-      "via": "Steam"
+      "note": "Source-engine bomb-defusal shooter",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Counter-Strike:_Source",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Day of Defeat: Source",
@@ -212,10 +255,14 @@
       "coop": null,
       "versus": {
         "n": 32,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "WWII class-based objectives",
-      "via": "Steam"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Day_of_Defeat:_Source",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Call of Duty",
@@ -223,10 +270,14 @@
       "coop": null,
       "versus": {
         "n": 64,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Original CoD multiplayer",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Call_of_Duty",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Call of Duty 4 (CoD4X)",
@@ -234,26 +285,34 @@
       "coop": null,
       "versus": {
         "n": 64,
-        "src": "unverified"
+        "src": "pcgw"
       },
-      "note": "CoD4X with LeetMod, plus a server shortcut",
-      "via": "Standalone",
-      "mod": "Mod of Call of Duty 4"
+      "note": "Extended server and client for Call of Duty 4",
+      "mod": "Mod of Call of Duty 4",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Call_of_Duty_4:_Modern_Warfare",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "scripts": "https://github.com/cgarst/lanscript-cod4"
     },
     {
       "name": "SWAT 4",
       "genre": "tactical",
       "coop": {
         "n": 8,
-        "src": "co-optimus"
+        "src": "checked"
       },
       "versus": {
         "n": 16,
         "src": "unverified"
       },
       "note": "Co-op campaign missions or competitive rounds",
-      "via": "Standalone",
-      "coopUrl": "https://www.co-optimus.com/game/83/pc/swat-4.html"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/SWAT_4",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "SWAT 4: Stetchkov Syndicate",
@@ -267,7 +326,11 @@
         "src": "unverified"
       },
       "note": "Expansion; assumed to match SWAT 4",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/SWAT_4",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Far Cry 2: Fortune's Edition",
@@ -275,37 +338,48 @@
       "coop": null,
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Competitive multiplayer; no co-op campaign",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Far_Cry_2",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Left 4 Dead 2",
       "genre": "coop",
       "coop": {
         "n": 4,
-        "src": "co-optimus"
+        "src": "checked",
+        "pin": true
       },
       "versus": {
         "n": 8,
-        "src": "co-optimus"
+        "src": "pcgw"
       },
       "note": "4-player campaigns, 8 in Versus",
-      "via": "Steam",
-      "coopUrl": "https://www.co-optimus.com/game/1207/pc/left-4-dead-2.html"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Left_4_Dead_2",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Sven Co-op",
       "genre": "coop",
       "coop": {
         "n": 32,
-        "src": "co-optimus"
+        "src": "pcgw"
       },
       "versus": null,
       "note": "Half-Life campaigns for a whole room",
-      "via": "Steam",
-      "coopUrl": "https://www.co-optimus.com/game/970/pc/sven-co-op.html"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Sven_Co-op",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "SWORN",
@@ -316,7 +390,11 @@
       },
       "versus": null,
       "note": "Action roguelite",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/SWORN",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "StarCraft",
@@ -324,10 +402,14 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Brood War era LAN lobby",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/StarCraft",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Warcraft III: The Frozen Throne",
@@ -335,69 +417,97 @@
       "coop": null,
       "versus": {
         "n": 12,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Custom games and ladder maps",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Warcraft_III:_Reign_of_Chaos",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "OpenRA: Red Alert",
       "genre": "strategy",
-      "coop": null,
+      "coop": {
+        "n": 63,
+        "src": "pcgw"
+      },
       "versus": {
-        "n": 8,
-        "src": "unverified"
+        "n": 63,
+        "src": "pcgw"
       },
       "note": "Typical map size; some maps hold more",
-      "via": "Standalone",
-      "mod": "Open-source remake"
+      "mod": "Open-source remake",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/OpenRA",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "OpenRA: Tiberian Dawn",
       "genre": "strategy",
-      "coop": null,
+      "coop": {
+        "n": 63,
+        "src": "pcgw"
+      },
       "versus": {
-        "n": 8,
-        "src": "unverified"
+        "n": 63,
+        "src": "pcgw"
       },
       "note": "Typical map size; some maps hold more",
-      "via": "Standalone",
-      "mod": "Open-source remake"
+      "mod": "Open-source remake",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/OpenRA",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "OpenRA: Dune 2000",
       "genre": "strategy",
-      "coop": null,
+      "coop": {
+        "n": 63,
+        "src": "pcgw"
+      },
       "versus": {
-        "n": 8,
-        "src": "unverified"
+        "n": 63,
+        "src": "pcgw"
       },
       "note": "Typical map size; some maps hold more",
-      "via": "Standalone",
-      "mod": "Open-source remake"
+      "mod": "Open-source remake",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/OpenRA",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Rise of Legends",
       "genre": "strategy",
       "coop": null,
       "versus": {
-        "n": 8,
-        "src": "unverified"
+        "n": 6,
+        "src": "pcgw"
       },
       "note": "Rise of Nations spin-off",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Rise_of_Nations:_Rise_of_Legends",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Mario Kart 8 Deluxe",
       "genre": "racing",
       "coop": null,
       "versus": {
-        "n": 8,
-        "src": "unverified"
+        "n": 12,
+        "src": "reported",
+        "pin": true
       },
-      "note": "Local wireless lobby, run through an emulator",
-      "via": "Emulator",
-      "mod": "Switch game run in an emulator"
+      "note": "Nintendo Switch game; LAN mode holds 12"
     },
     {
       "name": "Blur",
@@ -405,24 +515,32 @@
       "coop": null,
       "versus": {
         "n": 20,
-        "src": "checked"
+        "src": "pcgw"
       },
       "note": "Racing with power-ups; 4 on split-screen",
-      "via": "Standalone"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Blur",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Garry's Mod",
       "genre": "party",
       "coop": {
         "n": 128,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": {
         "n": 128,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Dedicated-server cap; most rooms run far fewer",
-      "via": "Steam"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Garry's_Mod",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Worms Armageddon",
@@ -430,49 +548,50 @@
       "coop": null,
       "versus": {
         "n": 6,
-        "src": "checked"
+        "src": "pcgw"
       },
       "note": "Turn-based artillery",
-      "via": "Steam"
-    },
-    {
-      "name": "Talisman: Digital Classic Edition",
-      "genre": "party",
-      "coop": null,
-      "versus": {
-        "n": 6,
-        "src": "checked"
-      },
-      "note": "Board game for 1 to 6 players",
-      "via": "Steam"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Worms_Armageddon",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Quake",
       "genre": "arena",
       "coop": {
-        "n": 4,
-        "src": "unverified"
+        "n": 16,
+        "src": "pcgw"
       },
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Classic and Enhanced re-release",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Quake",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Quake II",
       "genre": "arena",
       "coop": {
-        "n": 4,
-        "src": "unverified"
+        "n": 16,
+        "src": "pcgw"
       },
       "versus": {
-        "n": 32,
-        "src": "unverified"
+        "n": 16,
+        "src": "pcgw"
       },
-      "note": "Original, Enhanced, Quad Damage and RTX builds",
-      "via": "NAS"
+      "note": "Classic engine and its re-releases",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Quake_II",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Quake 4",
@@ -483,21 +602,29 @@
       },
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Campaign co-op plus deathmatch",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Quake_4",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Red Eclipse",
       "genre": "arena",
       "coop": null,
       "versus": {
-        "n": 16,
-        "src": "unverified"
+        "n": 128,
+        "src": "pcgw"
       },
       "note": "Parkour arena shooter",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Red_Eclipse",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Warsow",
@@ -508,7 +635,11 @@
         "src": "unverified"
       },
       "note": "Fast, trick-heavy arena shooter",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Warsow",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Urban Terror 4.3",
@@ -519,18 +650,29 @@
         "src": "unverified"
       },
       "note": "Realistic arena shooter built on Quake III",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Urban_Terror",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Unreal Tournament 3",
       "genre": "arena",
-      "coop": null,
+      "coop": {
+        "n": 32,
+        "src": "pcgw"
+      },
       "versus": {
         "n": 32,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Vehicle and Warfare modes",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Unreal_Tournament_3",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Halo: Combat Evolved",
@@ -540,19 +682,32 @@
         "n": 16,
         "src": "unverified"
       },
-      "note": "Stock PC release; no co-op campaign",
-      "via": "NAS"
+      "note": "Fixes and updates for the PC release; no co-op campaign",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Halo:_Combat_Evolved",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "mod": "Halo CE with the Chimera patch",
+      "modUrl": "https://github.com/SnowyMouse/chimera"
     },
     {
       "name": "Daikatana",
       "genre": "arena",
-      "coop": null,
+      "coop": {
+        "n": 32,
+        "src": "pcgw"
+      },
       "versus": {
-        "n": 16,
-        "src": "unverified"
+        "n": 32,
+        "src": "pcgw"
       },
       "note": "Quake II engine deathmatch",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Daikatana",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "SiN Gold",
@@ -560,21 +715,32 @@
       "coop": null,
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Deathmatch with the Wages of Sin pack",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/SiN",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Descent + Descent II",
       "genre": "arena",
-      "coop": null,
+      "coop": {
+        "n": 8,
+        "src": "pcgw"
+      },
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
-      "note": "Six-degrees-of-freedom, GOG release",
-      "via": "NAS"
+      "note": "Six-degrees-of-freedom flight deathmatch",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Descent_II",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Forsaken",
@@ -585,7 +751,11 @@
         "src": "unverified"
       },
       "note": "Descent-style flight deathmatch",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Forsaken",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "F.E.A.R.",
@@ -593,137 +763,143 @@
       "coop": null,
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Slow-motion deathmatch and team modes",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/F.E.A.R.",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "STAR WARS Battlefront (2004)",
       "genre": "tactical",
       "coop": null,
       "versus": {
-        "n": 16,
-        "src": "unverified"
+        "n": 64,
+        "src": "pcgw"
       },
       "note": "Classic Battlefront conquest",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Star_Wars:_Battlefront",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "STAR WARS Battlefront II (2005)",
       "genre": "tactical",
       "coop": null,
       "versus": {
-        "n": 32,
-        "src": "unverified"
+        "n": 64,
+        "src": "pcgw"
       },
       "note": "Conquest with space battles",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Star_Wars:_Battlefront_II",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Sacred Gold",
       "genre": "coop",
       "coop": {
         "n": 16,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": null,
       "note": "Action RPG with a huge party cap",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Sacred",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Titan Quest",
       "genre": "coop",
       "coop": {
         "n": 6,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": null,
       "note": "Mythology action RPG",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Titan_Quest",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Torchlight II",
       "genre": "coop",
       "coop": {
         "n": 6,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": null,
       "note": "Action RPG",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Torchlight_II",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Grim Dawn",
       "genre": "coop",
       "coop": {
         "n": 4,
-        "src": "unverified"
+        "src": "pcgw"
       },
-      "versus": null,
+      "versus": {
+        "n": 4,
+        "src": "pcgw"
+      },
       "note": "Action RPG",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Grim_Dawn",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Diablo + Hellfire",
       "genre": "coop",
       "coop": {
         "n": 4,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": {
         "n": 4,
         "src": "unverified"
       },
       "note": "Original Diablo with the Hellfire expansion",
-      "via": "NAS"
-    },
-    {
-      "name": "Heroes of Hammerwatch",
-      "genre": "coop",
-      "coop": {
-        "n": 4,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Top-down action roguelite",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Diablo",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Killing Floor 2",
       "genre": "coop",
       "coop": {
         "n": 6,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": {
-        "n": 12,
-        "src": "unverified"
+        "n": 6,
+        "src": "pcgw"
       },
       "note": "Zed-slaying survival; Versus mode holds 12",
-      "via": "NAS"
-    },
-    {
-      "name": "Earth Defense Force 5",
-      "genre": "coop",
-      "coop": {
-        "n": 4,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Giant-bug horde shooter",
-      "via": "NAS"
-    },
-    {
-      "name": "Helldivers",
-      "genre": "coop",
-      "coop": {
-        "n": 4,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Top-down co-op shooter",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Killing_Floor_2",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Gears of War",
@@ -737,101 +913,45 @@
         "src": "unverified"
       },
       "note": "Campaign co-op and versus",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Gears_of_War",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Gears 5",
       "genre": "coop",
       "coop": {
         "n": 3,
-        "src": "unverified"
+        "src": "unverified",
+        "pin": true
       },
       "versus": {
         "n": 10,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Campaign co-op, Horde and versus",
-      "via": "NAS"
-    },
-    {
-      "name": "F.E.A.R. 3",
-      "genre": "coop",
-      "coop": {
-        "n": 2,
-        "src": "unverified"
-      },
-      "versus": {
-        "n": 4,
-        "src": "unverified"
-      },
-      "note": "Co-op campaign plus Contractions and versus",
-      "via": "NAS"
-    },
-    {
-      "name": "Split Fiction",
-      "genre": "coop",
-      "coop": {
-        "n": 2,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Two-player co-op only",
-      "via": "NAS"
-    },
-    {
-      "name": "LEGO Voyagers",
-      "genre": "coop",
-      "coop": {
-        "n": 2,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Two-player co-op only",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Gears_5",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Baldur's Gate 3",
       "genre": "coop",
       "coop": {
         "n": 4,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "versus": null,
-      "note": "Party RPG",
-      "via": "NAS"
-    },
-    {
-      "name": "Outward",
-      "genre": "coop",
-      "coop": {
-        "n": 2,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Survival RPG",
-      "via": "NAS"
-    },
-    {
-      "name": "Darksiders Genesis",
-      "genre": "coop",
-      "coop": {
-        "n": 2,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Action RPG",
-      "via": "NAS"
-    },
-    {
-      "name": "Crab Champions",
-      "genre": "coop",
-      "coop": {
-        "n": 3,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Roguelite shooter",
-      "via": "NAS"
+      "note": "Party RPG; PCGamingWiki lists native LAN for 4, but flags support as partial",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Baldur's_Gate_3",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Age of Empires II",
@@ -839,10 +959,14 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Classic RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Age_of_Empires_II:_The_Age_of_Kings",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Age of Mythology",
@@ -850,21 +974,29 @@
       "coop": null,
       "versus": {
         "n": 12,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "RTS with myth-unit factions",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Age_of_Mythology",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Command & Conquer 3: Tiberium Wars",
       "genre": "strategy",
       "coop": null,
       "versus": {
-        "n": 6,
-        "src": "unverified"
+        "n": 8,
+        "src": "pcgw"
       },
       "note": "RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Command_%26_Conquer_3:_Tiberium_Wars",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Company of Heroes",
@@ -872,10 +1004,15 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "WWII RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Company_of_Heroes",
+        "lan": "limited",
+        "checked": "2026-11-21",
+        "caveat": "limited"
+      }
     },
     {
       "name": "Warhammer 40,000: Dawn of War",
@@ -883,10 +1020,15 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Warhammer_40,000:_Dawn_of_War",
+        "lan": "limited",
+        "checked": "2026-11-21",
+        "caveat": "limited"
+      }
     },
     {
       "name": "Dungeon Keeper 2",
@@ -894,10 +1036,14 @@
       "coop": null,
       "versus": {
         "n": 4,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Dungeon-builder RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Dungeon_Keeper_2",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Heroes of Might and Magic IV",
@@ -908,18 +1054,27 @@
         "src": "unverified"
       },
       "note": "Turn-based strategy",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Heroes_of_Might_and_Magic_IV",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Supreme Commander 2",
       "genre": "strategy",
       "coop": null,
       "versus": {
-        "n": 4,
-        "src": "unverified"
+        "n": 8,
+        "src": "pcgw"
       },
       "note": "Large-scale RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Supreme_Commander_2",
+        "lan": "hackable",
+        "checked": "2026-11-21",
+        "caveat": "hackable"
+      }
     },
     {
       "name": "Total Annihilation",
@@ -927,10 +1082,14 @@
       "coop": null,
       "versus": {
         "n": 10,
-        "src": "unverified"
+        "src": "pcgw"
       },
-      "note": "Commander Pack edition",
-      "via": "NAS"
+      "note": "Classic RTS",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Total_Annihilation",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Warcraft II: Battle.net Edition",
@@ -938,10 +1097,14 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Classic RTS",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Warcraft_II:_Battle.net_Edition",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "FlatOut 2",
@@ -949,21 +1112,29 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Destruction racing",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/FlatOut_2",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Re-Volt",
       "genre": "racing",
       "coop": null,
       "versus": {
-        "n": 8,
-        "src": "unverified"
+        "n": 24,
+        "src": "pcgw"
       },
       "note": "RC car racing",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Re-Volt",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Wreckfest",
@@ -974,7 +1145,11 @@
         "src": "unverified"
       },
       "note": "Banger racing and demolition derby",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Wreckfest",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "SuperTuxKart 1.5",
@@ -982,21 +1157,32 @@
       "coop": null,
       "versus": {
         "n": 8,
-        "src": "unverified"
+        "src": "pcgw"
       },
       "note": "Open-source kart racer",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/SuperTuxKart",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Valheim",
       "genre": "survival",
       "coop": {
         "n": 10,
-        "src": "unverified"
+        "src": "pcgw"
       },
-      "versus": null,
+      "versus": {
+        "n": 10,
+        "src": "pcgw"
+      },
       "note": "Default server size; admins can raise it",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Valheim",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "V Rising",
@@ -1010,7 +1196,11 @@
         "src": "unverified"
       },
       "note": "Default server size, PvE or PvP",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/V_Rising",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Palworld",
@@ -1021,40 +1211,44 @@
       },
       "versus": null,
       "note": "Dedicated-server cap",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Palworld",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Project Zomboid",
       "genre": "survival",
       "coop": {
-        "n": 32,
-        "src": "unverified"
+        "n": 100,
+        "src": "pcgw"
       },
       "versus": null,
       "note": "Default server size",
-      "via": "NAS"
-    },
-    {
-      "name": "Sons of the Forest",
-      "genre": "survival",
-      "coop": {
-        "n": 8,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Open-world survival horror",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Project_Zomboid",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Don't Starve Together",
       "genre": "survival",
       "coop": {
         "n": 6,
-        "src": "unverified"
+        "src": "pcgw"
       },
-      "versus": null,
+      "versus": {
+        "n": 6,
+        "src": "pcgw"
+      },
       "note": "Default server size",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Don't_Starve_Together",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     },
     {
       "name": "Factorio",
@@ -1065,18 +1259,26 @@
       },
       "versus": null,
       "note": "No hard cap; 64 is a practical ceiling",
-      "via": "NAS"
-    },
-    {
-      "name": "PEAK",
-      "genre": "survival",
-      "coop": {
-        "n": 4,
-        "src": "unverified"
-      },
-      "versus": null,
-      "note": "Co-op mountain climb",
-      "via": "NAS"
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Factorio",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     }
+  ],
+  "removedNoLan": [
+    "LEGO Voyagers",
+    "Split Fiction",
+    "Darksiders Genesis",
+    "Outward",
+    "Crab Champions",
+    "PEAK",
+    "Helldivers",
+    "Altitude",
+    "Talisman: Digital Classic Edition",
+    "Heroes of Hammerwatch",
+    "Earth Defense Force 5",
+    "F.E.A.R. 3",
+    "Sons of the Forest"
   ]
 }

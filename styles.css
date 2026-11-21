@@ -97,7 +97,6 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 
 .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .card-name { font: 600 1.1875rem/1.2 var(--display); }
-.via { color: var(--muted); font-size: 0.8125rem; white-space: nowrap; }
 .note { color: var(--muted); font-size: 0.9375rem; min-height: 2.9em; }
 
 .modes { display: grid; gap: 6px; margin-top: auto; }
@@ -121,14 +120,14 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .tag { font-size: 0.75rem; font-weight: 600; padding: 3px 7px; border-radius: var(--radius-s); border: 1px solid; white-space: nowrap; }
 .tag-co  { color: #8FE3A6; border-color: #2F6B43; background: #12281B; }
 .tag-chk { color: #8FD3FF; border-color: #2D5A78; background: #11222E; }
+.tag-pcgw { color: #FFFFFF; border-color: #5E7A92; background: #17222C; }
 .tag-rep { color: #FFB3D1; border-color: #7A3A55; background: #2A1420; }
-.tag-cfg { color: #E3C99A; border-color: #6B5A33; background: #261F10; }
 .tag-unv { color: var(--muted); border-color: var(--line-hi); background: transparent; }
 
 .mod { align-self: flex-start; margin-top: -2px; padding: 2px 8px; font-size: 0.8125rem; font-weight: 600; color: var(--g); border: 1px solid color-mix(in srgb, var(--g) 45%, transparent); border-radius: var(--radius-s); }
-.co-link { align-self: flex-start; font-size: 0.875rem; color: var(--muted); text-decoration: underline; text-decoration-color: var(--line-hi); text-underline-offset: 3px; padding-block: 12px; margin-block: -6px -12px;
+.ext-link { align-self: flex-start; font-size: 0.875rem; color: var(--muted); text-decoration: underline; text-decoration-color: var(--line-hi); text-underline-offset: 3px; padding-block: 12px; margin-block: -6px -12px;
   transition: color var(--duration-quick) var(--ease-smooth-out), text-decoration-color var(--duration-quick) var(--ease-smooth-out); }
-.co-link:hover { color: var(--text); text-decoration-color: var(--text); }
+.ext-link:hover { color: var(--text); text-decoration-color: var(--text); }
 
 /* ---------- Empty + notes ---------- */
 .empty { margin-top: 48px; padding: 32px; border: 1px dashed var(--line-hi); border-radius: var(--radius); }
@@ -138,12 +137,6 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .btn:hover { background: #fff; }
 .btn:active { transform: scale(0.97); }
 
-.notes { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--line); max-width: 68ch; }
-.notes h2 { font: 700 1.5rem/1.2 var(--display); margin-bottom: 16px; }
-.notes p { color: var(--muted); margin-top: 16px; }
-.legend { display: grid; gap: 12px; }
-.legend li { display: grid; grid-template-columns: 104px 1fr; gap: 12px; align-items: baseline; color: var(--muted); }
-.legend .tag { justify-self: start; }
 
 .foot { border-top: 1px solid var(--line); padding-block: 24px; color: var(--muted); font-size: 0.9375rem; }
 
@@ -159,7 +152,6 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
   .mode { grid-template-columns: 48px minmax(0, 1fr) 36px; }
   .mode .tag { grid-column: 2 / -1; justify-self: start; }
   .mode.none { grid-template-columns: 48px 1fr; }
-  .legend li { grid-template-columns: 1fr; gap: 4px; }
 }
 
 /* ---------- Reduced motion ---------- */
@@ -168,3 +160,15 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
   .card:hover { transform: none; }
 }
+
+.links { display: flex; flex-wrap: wrap; gap: 0 18px; margin-block: -6px -12px; }
+.links .ext-link { margin-block: 0; }
+.caveat { margin: -2px 0 0; font-size: 0.8125rem; color: var(--muted); }
+
+.search { font: 500 0.9375rem/1 var(--body); color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-height: 44px; width: 220px; max-width: 100%; padding: 0 14px;
+  transition: border-color var(--duration-quick) var(--ease-smooth-out), background-color var(--duration-quick) var(--ease-smooth-out); }
+.search::placeholder { color: var(--muted); }
+.search:hover { border-color: var(--line-hi); }
+.search:focus-visible { background: var(--surface-hi); }
+a.mod { text-decoration: none; transition: background-color var(--duration-quick) var(--ease-smooth-out); }
+a.mod:hover { background: color-mix(in srgb, var(--g) 14%, transparent); }

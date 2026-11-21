@@ -19,7 +19,7 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>LAN party games, sorted by how many can play</h1>
-        <p class="lead">Every game shortcut on our LAN machine, grouped by genre, with the largest co-op and versus lobby each one supports over a local network.</p>
+        <p class="lead">Every game on our LAN party list, grouped by genre, with the largest co-op and versus lobby each one supports over a local network.</p>
         <dl class="stats" id="stats"></dl>
       </div>
       <ol class="lobby" id="lobby" aria-hidden="true"></ol>
@@ -28,6 +28,10 @@
 
   <div class="bar" id="bar">
     <div class="wrap bar-inner">
+      <div class="group">
+        <label class="group-label" for="q">Search</label>
+        <input class="search" id="q" type="search" placeholder="Game name" autocomplete="off" spellcheck="false">
+      </div>
       <div class="group" role="group" aria-labelledby="mode-label">
         <span class="group-label" id="mode-label">Mode</span>
         <div class="chips" id="modes"></div>
@@ -47,27 +51,15 @@
     <p class="result" id="result" role="status" aria-live="polite"></p>
     <div id="sections"></div>
     <div class="empty" id="empty" hidden>
-      <h2>No games fit that room</h2>
-      <p>Nothing in this genre supports that many players over LAN. Lower the headcount or show every genre.</p>
+      <h2>No games match</h2>
+      <p>Nothing fits that search, headcount and genre. Change the search, lower the headcount, or show every genre.</p>
       <button class="btn" id="reset" type="button">Show all games</button>
     </div>
 
-    <section class="notes" aria-labelledby="notes-h">
-      <h2 id="notes-h">Where the numbers come from</h2>
-      <ul class="legend">
-        <li><span class="tag tag-co">Co-Optimus</span><span>Read from the game's page on <a href="https://www.co-optimus.com/">co-optimus.com</a>. Co-Optimus lists co-op games, so most arena and strategy titles aren't there.</span></li>
-        <li><span class="tag tag-chk">Checked</span><span>Confirmed against another published source.</span></li>
-        <li><span class="tag tag-rep">Reported</span><span>Taken from hands-on experience with the game or mod, such as Halo Project Reclaimer's 127-player dedicated servers.</span></li>
-        <li><span class="tag tag-cfg">Our config</span><span>Read from the server scripts and config on our own LAN machine, as with Halo Project Reclaimer.</span></li>
-        <li><span class="tag tag-unv">Unverified</span><span>The usual server limit for that game. Test it before you promise a friend a 64-player match.</span></li>
-      </ul>
-      <p>Mods, source ports and community servers are listed apart from the game they build on, because their limits can differ from the original. Every card links to Co-Optimus: a page link where we found one, otherwise a search, since Co-Optimus doesn't list every game.</p>
-      <p>Each count is the most players one LAN session accepts in that mode. Co-op and versus are listed separately because they often differ: Left 4 Dead 2 holds 4 in a campaign and 8 in Versus.</p>
-    </section>
   </main>
 
   <footer class="foot">
-    <div class="wrap">Player counts checked November 2026. Fix a number by editing <code>data/games.json</code>.</div>
+    <div class="wrap">LAN player counts from <a href="https://www.pcgamingwiki.com/">PCGamingWiki</a> (CC BY-NC-SA), checked November 2026.</div>
   </footer>
 
   <script src="app.js"></script>
