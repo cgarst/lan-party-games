@@ -90,7 +90,7 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .rpg:fullscreen { background: var(--bg); padding: 12px; overflow: auto; display: flex; flex-direction: column; align-items: center; }
 .rpg:fullscreen > * { width: 100%; max-width: 960px; }
 .rpg:fullscreen .rpg-screen { width: auto; max-width: 100%; }
-.rpg:fullscreen .rpg-canvas { width: auto; max-width: 100%; max-height: calc(100vh - 150px); }
+.rpg:fullscreen .rpg-canvas { max-width: none; }
 .rpg-top { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin-top: 12px; font: 600 0.9375rem/1.2 var(--display); }
 .rpg-clock { font-variant-numeric: tabular-nums; }
 .rpg-temp { color: var(--muted); }

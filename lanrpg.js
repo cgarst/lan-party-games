@@ -1130,7 +1130,21 @@
       else root.requestFullscreen().catch(() => {});
       canvas.focus({ preventScroll: true });
     });
-    document.addEventListener("fullscreenchange", () => { fsBtn.textContent = document.fullscreenElement === root ? "Exit fullscreen" : "Fullscreen"; });
+    // integer-scale the canvas to the largest whole multiple that fits (falls back to fit-to-width when even 1x is too big)
+    const fitFs = () => {
+      if (document.fullscreenElement !== root) { canvas.style.width = canvas.style.height = ""; return; }
+      canvas.style.width = W + "px"; canvas.style.height = H + "px";
+      const scr = canvas.parentElement.getBoundingClientRect(), last = root.lastElementChild.getBoundingClientRect();
+      const chromeW = scr.width - W, chromeH = scr.height - H;
+      const below = Math.max(0, last.bottom - scr.bottom);
+      const cs = getComputedStyle(root), padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight), padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+      const fit = Math.min((Math.min(root.clientWidth, 960) - padX - chromeW) / W, (root.clientHeight - padY - chromeH - below) / H);
+      const k = fit >= 1 ? Math.floor(fit) : 0;
+      if (k) { canvas.style.width = W * k + "px"; canvas.style.height = H * k + "px"; }
+      else { canvas.style.width = "100%"; canvas.style.height = "auto"; }
+    };
+    document.addEventListener("fullscreenchange", () => { fsBtn.textContent = document.fullscreenElement === root ? "Exit fullscreen" : "Fullscreen"; fitFs(); });
+    window.addEventListener("resize", fitFs);
   }
   // touch controls (shown on coarse pointers via CSS)
   root.querySelectorAll(".rpg-pb[data-k]").forEach((b) => {
