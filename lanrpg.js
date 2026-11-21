@@ -826,12 +826,15 @@
   function begin(own) {
     setupDay(own); phase = "play"; canvas.focus({ preventScroll: true });
     const pc = P.st.pc;
-    S.youUntil = 0;
-    queue.push(() => openDialog({
+    S.youUntil = Infinity; // stays lit until you dismiss the intro dialog, then fades after 10s
+    queue.push(() => { openDialog({
       title: own ? "You brought..." : "Your PC is...",
-      body: `${pcLabel(pc)} ${own ? pick(WASTE) : TIER_FLAVOR[pc.tier]} It's the one marked YOUR PC.`,
+      body: `${pcLabel(pc)} ${own ? pick(WASTE) : TIER_FLAVOR[pc.tier]} The pulsing YOU tag is your character; the one marked YOUR PC is your seat.`,
       opts: [{ label: "Sit down and get started", run() { S.youUntil = anim + 10; } }]
-    }));
+    });
+      // Keep the dialog off your character: move it to the top when you start in the lower half.
+      if (P.y > H / 2) { el.dlg.style.bottom = "auto"; el.dlg.style.top = "8px"; }
+    });
   }
 
   // ---------- dialogs ----------
@@ -839,6 +842,7 @@
     dlgOpen = true; dlgModal = !!modal;
     el.title.textContent = title; el.body.textContent = body || "";
     el.dlg.classList.toggle("center", !!center);
+    el.dlg.style.top = el.dlg.style.bottom = "";
     el.dlg.querySelectorAll(".rpg-mine").forEach((n) => n.remove());
     el.opts.classList.remove("row");
     el.opts.replaceChildren(...opts.map((o, i) => {
@@ -1448,6 +1452,15 @@
     if (!intro && !away) return;
     const bob = Math.round(Math.sin(anim * 6) * 1.5), cx = d.x + 24;
     if (intro) {
+      // "This is you": a tag, arrow and pulsing ring on your character.
+      const px = Math.round(P.x), py = Math.round(P.y), yb = Math.round(Math.sin(anim * 6) * 1.5);
+      ctx.font = FONT; ctx.textBaseline = "top";
+      ctx.strokeStyle = `rgba(255,197,49,${0.55 + 0.45 * Math.sin(anim * 5)})`; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.ellipse(px, py + 1, 9, 4, 0, 0, Math.PI * 2); ctx.stroke();
+      const you = "YOU", yw = Math.ceil(ctx.measureText(you).width) + 8, yx = clamp(px - yw / 2, 2, W - yw - 2), yy = Math.max(py - (P.act === "sit" ? 38 : 40), 2) + yb;
+      R(yx - 1, yy - 1, yw + 2, 14, "#2b1d12"); R(yx, yy, yw, 12, "#ffc531");
+      ctx.fillStyle = "#2b1d12"; ctx.fillText(you, yx + 4, yy + 2);
+      R(px - 2, yy + 13, 5, 2, "#2b1d12"); R(px - 1, yy + 15, 3, 2, "#2b1d12"); R(px - 1, yy + 12, 3, 3, "#ffc531");
       const pulse = 0.55 + 0.45 * Math.sin(anim * 5);
       ctx.strokeStyle = `rgba(255,197,49,${pulse})`; ctx.lineWidth = 2;
       ctx.strokeRect(d.x - 1, d.y - 13, 50, 31);
