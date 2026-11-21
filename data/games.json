@@ -170,11 +170,7 @@
         "lan": "true",
         "checked": "2026-11-21"
       },
-      "scripts": "https://github.com/cgarst/reclaimer-lan",
-      "internet": {
-        "level": "partial",
-        "note": "Halo: The Master Chief Collection needs a Microsoft account."
-      }
+      "scripts": "https://github.com/cgarst/reclaimer-lan"
     },
     {
       "name": "Jedi Knight Academy",
