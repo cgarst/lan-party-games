@@ -115,7 +115,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Xonotic",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "mod": "Open-source game",
+      "modUrl": "https://xonotic.org/"
     },
     {
       "name": "Halo Custom Edition",
@@ -651,7 +653,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Red_Eclipse",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "mod": "Open-source game",
+      "modUrl": "https://www.redeclipse.net/"
     },
     {
       "name": "Warsow",
@@ -666,7 +670,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Warsow",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "mod": "Open-source game",
+      "modUrl": "https://warsow.net/"
     },
     {
       "name": "Urban Terror 4.3",
@@ -1178,7 +1184,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/SuperTuxKart",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "mod": "Open-source game",
+      "modUrl": "https://supertuxkart.net/"
     },
     {
       "name": "Valheim",
@@ -1439,7 +1447,9 @@
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
       },
-      "steam": "https://store.steampowered.com/app/380840/"
+      "steam": "https://store.steampowered.com/app/380840/",
+      "mod": "Open-source game",
+      "modUrl": "https://github.com/teeworlds/teeworlds"
     },
     {
       "name": "Left 4 Dead",

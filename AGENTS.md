@@ -1,6 +1,6 @@
 # AGENTS.md
 
-How to keep this GitHub Pages site up to date. The page is static (`index.html`, `app.js`, `styles.css`) and renders `data/games.json`. Almost every change is a data change.
+How to keep this GitHub Pages site up to date. The page is static (`index.html`, `app.js`, `styles.css`) and renders `data/games.json`. Almost every change is a data change. The hero's pixel-art LAN party minigame lives in `lanrpg.js` (it only reads game names from `data/games.json`).
 
 ## Rules
 
@@ -91,6 +91,10 @@ Base the flag on a stated source, usually the PCGamingWiki page (search the whol
 ### Purchase required
 
 Games that must be bought (the user asked for paid Steam games to be listed) carry `"purchase": { "store": "Steam", "url": "https://store.steampowered.com/app/<id>/" }`. The card shows a "Purchase required" badge and a "Buy on Steam" link. Free Steam games have no purchase flag; they carry `"steam": "https://store.steampowered.com/app/<id>/"` and the card links to it.
+
+### Open-source games
+
+Open-source games and ports get `"mod": "Open-source game"` (or a port label) and `"modUrl"` pointing at the project homepage or repo. The pill on the card links to it. Commercial games with a later source release (Quake, Quake II) are not marked.
 
 ### LAN script repos
 
