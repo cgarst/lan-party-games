@@ -1124,5 +1124,47 @@
     "online": "unknown",
     "onlinePlayers": "",
     "fetched": "2026-11-21"
+  },
+  "Left 4 Dead": {
+    "page": "Left 4 Dead",
+    "url": "https://www.pcgamingwiki.com/wiki/Left_4_Dead",
+    "hasNetworkBlock": true,
+    "lan": "hackable",
+    "lanPlayers": "8",
+    "lanModes": "Co-op, Versus",
+    "lanNotes": "See LAN play.<br/>\"Versus\" mode. Up to 4v4 Survivors vs. Infected.",
+    "local": "hackable",
+    "localPlayers": "2",
+    "online": "true",
+    "onlinePlayers": "8",
+    "fetched": "2026-11-21"
+  },
+  "Half-Life 2: Deathmatch": {
+    "page": "Half-Life 2: Deathmatch",
+    "url": "https://www.pcgamingwiki.com/wiki/Half-Life_2:_Deathmatch",
+    "hasNetworkBlock": true,
+    "lan": "true",
+    "lanPlayers": "16",
+    "lanModes": "Versus",
+    "lanNotes": "",
+    "local": "hackable",
+    "localPlayers": "16",
+    "online": "true",
+    "onlinePlayers": "16",
+    "fetched": "2026-11-21"
+  },
+  "Supreme Commander: Forged Alliance": {
+    "page": "Supreme Commander: Forged Alliance",
+    "url": "https://www.pcgamingwiki.com/wiki/Supreme_Commander:_Forged_Alliance",
+    "hasNetworkBlock": true,
+    "lan": "true",
+    "lanPlayers": "8",
+    "lanModes": "Versus, Co-op",
+    "lanNotes": "Use the Forged Alliance Forever mod to increase the max player limit to 16. Co-op requires the Forged Alliance Forever mod.",
+    "local": "",
+    "localPlayers": "",
+    "online": "limited",
+    "onlinePlayers": "8",
+    "fetched": "2026-11-21"
   }
 }

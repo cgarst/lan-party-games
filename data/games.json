@@ -232,6 +232,9 @@
         "lan": "limited",
         "checked": "2026-11-21",
         "caveat": "limited"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     },
     {
@@ -247,6 +250,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Counter-Strike:_Source",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     },
     {
@@ -262,6 +268,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Day_of_Defeat:_Source",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     },
     {
@@ -364,6 +373,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Left_4_Dead_2",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     },
     {
@@ -540,6 +552,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/Garry's_Mod",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     },
     {
@@ -1191,6 +1206,9 @@
         "url": "https://www.pcgamingwiki.com/wiki/V_Rising",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     },
     {
@@ -1398,6 +1416,68 @@
       "internet": {
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
+      }
+    },
+    {
+      "name": "Left 4 Dead",
+      "genre": "coop",
+      "coop": {
+        "n": 4,
+        "src": "checked",
+        "pin": true
+      },
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "4-player campaigns, 8 in Versus",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Left_4_Dead",
+        "lan": "hackable",
+        "checked": "2026-11-21",
+        "caveat": "hackable"
+      },
+      "purchase": {
+        "store": "Steam"
+      }
+    },
+    {
+      "name": "Half-Life 2: Deathmatch",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 16,
+        "src": "pcgw"
+      },
+      "note": "Source-engine deathmatch",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Half-Life_2:_Deathmatch",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
+      }
+    },
+    {
+      "name": "Supreme Commander: Forged Alliance",
+      "genre": "strategy",
+      "coop": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "versus": {
+        "n": 8,
+        "src": "pcgw"
+      },
+      "note": "Large-scale RTS",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Supreme_Commander:_Forged_Alliance",
+        "lan": "true",
+        "checked": "2026-11-21"
+      },
+      "purchase": {
+        "store": "Steam"
       }
     }
   ],
