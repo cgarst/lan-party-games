@@ -3,7 +3,8 @@
   "sources": {
     "co-optimus": "Read from the game page on co-optimus.com",
     "checked": "Confirmed against another published source",
-    "unverified": "Usual server limit; test before relying on it"
+    "unverified": "Usual server limit; test before relying on it",
+    "config": "Read from our own server config on this machine"
   },
   "genres": [
     {
@@ -59,7 +60,8 @@
         "src": "unverified"
       },
       "note": "ioquake3 build, with a dedicated-server shortcut",
-      "via": "Standalone"
+      "via": "Standalone",
+      "mod": "ioquake3 source port"
     },
     {
       "name": "Unreal Tournament",
@@ -105,8 +107,9 @@
         "n": 16,
         "src": "unverified"
       },
-      "note": "Halo CE with custom maps",
-      "via": "Standalone"
+      "note": "Same 16-player cap as stock; custom maps and dedicated server",
+      "via": "Standalone",
+      "mod": "Chimera-patched Halo CE with custom maps"
     },
     {
       "name": "Halo Online",
@@ -116,7 +119,23 @@
         "n": 16,
         "src": "unverified"
       },
-      "note": "Community ElDewrito build",
+      "note": "Halo 3-style multiplayer; no campaign",
+      "via": "Standalone",
+      "mod": "Community build (ElDewrito) of Halo Online"
+    },
+    {
+      "name": "Halo Project Reclaimer",
+      "genre": "arena",
+      "coop": {
+        "n": 16,
+        "src": "config"
+      },
+      "versus": {
+        "n": 16,
+        "src": "config"
+      },
+      "mod": "Community dedicated server for Halo 3 and ODST (MCC)",
+      "note": "Legendary campaign co-op, or a 60-game vote playlist",
       "via": "Standalone"
     },
     {
@@ -128,7 +147,8 @@
         "src": "unverified"
       },
       "note": "OpenJK engine; saber duels and free-for-all",
-      "via": "Standalone"
+      "via": "Standalone",
+      "mod": "OpenJK source port"
     },
     {
       "name": "Duskworld",
@@ -216,7 +236,8 @@
         "src": "unverified"
       },
       "note": "CoD4X with LeetMod, plus a server shortcut",
-      "via": "Standalone"
+      "via": "Standalone",
+      "mod": "Mod of Call of Duty 4"
     },
     {
       "name": "SWAT 4",
@@ -230,7 +251,8 @@
         "src": "unverified"
       },
       "note": "Co-op campaign missions or competitive rounds",
-      "via": "Standalone"
+      "via": "Standalone",
+      "coopUrl": "https://www.co-optimus.com/game/83/pc/swat-4.html"
     },
     {
       "name": "SWAT 4: Stetchkov Syndicate",
@@ -269,7 +291,8 @@
         "src": "co-optimus"
       },
       "note": "4-player campaigns, 8 in Versus",
-      "via": "Steam"
+      "via": "Steam",
+      "coopUrl": "https://www.co-optimus.com/game/1207/pc/left-4-dead-2.html"
     },
     {
       "name": "Sven Co-op",
@@ -280,7 +303,8 @@
       },
       "versus": null,
       "note": "Half-Life campaigns for a whole room",
-      "via": "Steam"
+      "via": "Steam",
+      "coopUrl": "https://www.co-optimus.com/game/970/pc/sven-co-op.html"
     },
     {
       "name": "SWORN",
@@ -324,7 +348,8 @@
         "src": "unverified"
       },
       "note": "Typical map size; some maps hold more",
-      "via": "Standalone"
+      "via": "Standalone",
+      "mod": "Open-source remake"
     },
     {
       "name": "OpenRA: Tiberian Dawn",
@@ -335,7 +360,8 @@
         "src": "unverified"
       },
       "note": "Typical map size; some maps hold more",
-      "via": "Standalone"
+      "via": "Standalone",
+      "mod": "Open-source remake"
     },
     {
       "name": "OpenRA: Dune 2000",
@@ -346,7 +372,8 @@
         "src": "unverified"
       },
       "note": "Typical map size; some maps hold more",
-      "via": "Standalone"
+      "via": "Standalone",
+      "mod": "Open-source remake"
     },
     {
       "name": "Rise of Legends",
@@ -368,7 +395,8 @@
         "src": "unverified"
       },
       "note": "Local wireless lobby, run through an emulator",
-      "via": "Emulator"
+      "via": "Emulator",
+      "mod": "Switch game run in an emulator"
     },
     {
       "name": "Blur",
@@ -511,7 +539,7 @@
         "n": 16,
         "src": "unverified"
       },
-      "note": "The original PC release",
+      "note": "Stock PC release; no co-op campaign",
       "via": "NAS"
     },
     {

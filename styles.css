@@ -121,7 +121,13 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .tag { font-size: 0.75rem; font-weight: 600; padding: 3px 7px; border-radius: var(--radius-s); border: 1px solid; white-space: nowrap; }
 .tag-co  { color: #8FE3A6; border-color: #2F6B43; background: #12281B; }
 .tag-chk { color: #8FD3FF; border-color: #2D5A78; background: #11222E; }
+.tag-cfg { color: #E3C99A; border-color: #6B5A33; background: #261F10; }
 .tag-unv { color: var(--muted); border-color: var(--line-hi); background: transparent; }
+
+.mod { align-self: flex-start; margin-top: -2px; padding: 2px 8px; font-size: 0.8125rem; font-weight: 600; color: var(--g); border: 1px solid color-mix(in srgb, var(--g) 45%, transparent); border-radius: var(--radius-s); }
+.co-link { align-self: flex-start; font-size: 0.875rem; color: var(--muted); text-decoration: underline; text-decoration-color: var(--line-hi); text-underline-offset: 3px; padding-block: 12px; margin-block: -6px -12px;
+  transition: color var(--duration-quick) var(--ease-smooth-out), text-decoration-color var(--duration-quick) var(--ease-smooth-out); }
+.co-link:hover { color: var(--text); text-decoration-color: var(--text); }
 
 /* ---------- Empty + notes ---------- */
 .empty { margin-top: 48px; padding: 32px; border: 1px dashed var(--line-hi); border-radius: var(--radius); }

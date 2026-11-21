@@ -19,8 +19,11 @@
   const SRC = {
     "co-optimus": { cls: "tag-co", label: "Co-Optimus", hint: "Read from the game's Co-Optimus page" },
     checked: { cls: "tag-chk", label: "Checked", hint: "Confirmed against another published source" },
+    config: { cls: "tag-cfg", label: "Our config", hint: "Read from our own server config on this machine" },
     unverified: { cls: "tag-unv", label: "Unverified", hint: "Usual server limit; test before relying on it" }
   };
+  const coopUrl = (g) =>
+    g.coopUrl || "https://www.co-optimus.com/search.php?srchtext=" + encodeURIComponent(g.name);
   const MODE_LABEL = { coop: "Co-op", versus: "Versus" };
 
   const state = { mode: "any", min: 0, genre: "all" };
@@ -127,10 +130,17 @@
     art.dataset.name = g.name;
     const top = el("div", "card-top");
     top.append(el("h3", "card-name", g.name), el("span", "via", g.via));
-    art.append(top, el("p", "note", g.note));
+    art.append(top);
+    if (g.mod) art.append(el("p", "mod", g.mod));
+    art.append(el("p", "note", g.note));
     const modes = el("div", "modes");
     modes.append(modeRow("coop", g.coop), modeRow("versus", g.versus));
-    art.append(modes);
+    const link = el("a", "co-link", g.coopUrl ? "Co-Optimus page" : "Search Co-Optimus");
+    link.href = coopUrl(g);
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.setAttribute("aria-label", `${g.name} on Co-Optimus (opens in a new tab)`);
+    art.append(modes, link);
     return art;
   }
 
