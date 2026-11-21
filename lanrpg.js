@@ -133,7 +133,7 @@
       </div>
       <button type="button" class="rpg-pb rpg-pact" aria-label="Interact">E</button>
     </div>
-    <div class="rpg-top"><span class="rpg-clock"></span><span class="rpg-temp"></span><span class="rpg-speeds" role="group" aria-label="Game speed"></span></div>
+    <div class="rpg-top"><span class="rpg-clock"></span><span class="rpg-temp"></span><span class="rpg-speeds" role="group" aria-label="Game speed"></span><button type="button" class="rpg-sp rpg-fs">Fullscreen</button></div>
     <p class="rpg-pcline"></p>
     <div class="rpg-meters"></div>
     <p class="rpg-hint">Walk: arrows / WASD or click. Interact: E or Space.</p>
@@ -1121,6 +1121,17 @@
     if (e.key === "Escape" && !dlgModal) { e.preventDefault(); closeDialog(); return; }
     if (/^[1-9]$/.test(e.key)) { const b = el.opts.children[Number(e.key) - 1]; if (b && !b.disabled) { e.preventDefault(); b.click(); } }
   });
+  // fullscreen (hidden where the browser lacks element fullscreen, e.g. iPhone Safari)
+  const fsBtn = root.querySelector(".rpg-fs");
+  if (!root.requestFullscreen) fsBtn.hidden = true;
+  else {
+    fsBtn.addEventListener("click", () => {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else root.requestFullscreen().catch(() => {});
+      canvas.focus({ preventScroll: true });
+    });
+    document.addEventListener("fullscreenchange", () => { fsBtn.textContent = document.fullscreenElement === root ? "Exit fullscreen" : "Fullscreen"; });
+  }
   // touch controls (shown on coarse pointers via CSS)
   root.querySelectorAll(".rpg-pb[data-k]").forEach((b) => {
     const k = b.dataset.k;
