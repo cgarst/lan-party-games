@@ -174,7 +174,8 @@
         "lan": "true",
         "checked": "2026-11-21"
       },
-      "scripts": "https://github.com/cgarst/reclaimer-lan"
+      "scripts": "https://github.com/cgarst/reclaimer-lan",
+      "modUrl": "https://projectreclaimer.dev/"
     },
     {
       "name": "Jedi Knight Academy",
