@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAN party games by genre and player count</title>
+  <meta name="description" content="Every game on our LAN party machine, grouped by genre, with how many players each supports over a local network.">
+  <meta name="theme-color" content="#0E1318">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230E1318'/%3E%3Crect x='5' y='5' width='9' height='9' fill='%23FF5A47'/%3E%3Crect x='18' y='5' width='9' height='9' fill='%233FD0C9'/%3E%3Crect x='5' y='18' width='9' height='9' fill='%23FFC531'/%3E%3Crect x='18' y='18' width='9' height='9' fill='%23A6E05A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#library">Skip to the game list</a>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>LAN party games, sorted by how many can play</h1>
+        <p class="lead">Every game shortcut on our LAN machine, grouped by genre, with the largest co-op and versus lobby each one supports over a local network.</p>
+        <dl class="stats" id="stats"></dl>
+      </div>
+      <ol class="lobby" id="lobby" aria-hidden="true"></ol>
+    </div>
+  </header>
+
+  <div class="bar" id="bar">
+    <div class="wrap bar-inner">
+      <div class="group" role="group" aria-labelledby="mode-label">
+        <span class="group-label" id="mode-label">Mode</span>
+        <div class="chips" id="modes"></div>
+      </div>
+      <div class="group" role="group" aria-labelledby="headcount-label">
+        <span class="group-label" id="headcount-label">Players in the room</span>
+        <div class="chips" id="headcount"></div>
+      </div>
+      <div class="group" role="group" aria-labelledby="genre-label">
+        <span class="group-label" id="genre-label">Genre</span>
+        <div class="chips" id="genres"></div>
+      </div>
+    </div>
+  </div>
+
+  <main id="library" class="wrap">
+    <p class="result" id="result" role="status" aria-live="polite"></p>
+    <div id="sections"></div>
+    <div class="empty" id="empty" hidden>
+      <h2>No games fit that room</h2>
+      <p>Nothing in this genre supports that many players over LAN. Lower the headcount or show every genre.</p>
+      <button class="btn" id="reset" type="button">Show all games</button>
+    </div>
+
+    <section class="notes" aria-labelledby="notes-h">
+      <h2 id="notes-h">Where the numbers come from</h2>
+      <ul class="legend">
+        <li><span class="tag tag-co">Co-Optimus</span><span>Read from the game's page on <a href="https://www.co-optimus.com/">co-optimus.com</a>. Co-Optimus lists co-op games, so most arena and strategy titles aren't there.</span></li>
+        <li><span class="tag tag-chk">Checked</span><span>Confirmed against another published source.</span></li>
+        <li><span class="tag tag-unv">Unverified</span><span>The usual server limit for that game. Test it before you promise a friend a 64-player match.</span></li>
+      </ul>
+      <p>Each count is the most players one LAN session accepts in that mode. Co-op and versus are listed separately because they often differ: Left 4 Dead 2 holds 4 in a campaign and 8 in Versus.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">Player counts checked November 2026. Fix a number by editing <code>data/games.json</code>.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
