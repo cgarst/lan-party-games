@@ -90,7 +90,7 @@ Base the flag on a stated source, usually the PCGamingWiki page (search the whol
 
 ### Purchase required
 
-Games that must be bought (the user asked for paid Steam games to be listed) carry `"purchase": { "store": "Steam" }`. The card shows a "Purchase required" badge. Free games have no flag.
+Games that must be bought (the user asked for paid Steam games to be listed) carry `"purchase": { "store": "Steam", "url": "https://store.steampowered.com/app/<id>/" }`. The card shows a "Purchase required" badge and a "Buy on Steam" link. Free games have no flag.
 
 ### LAN script repos
 

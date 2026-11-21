@@ -234,7 +234,8 @@
         "caveat": "limited"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/730/"
       }
     },
     {
@@ -252,7 +253,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/240/"
       }
     },
     {
@@ -270,7 +272,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/300/"
       }
     },
     {
@@ -375,7 +378,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/550/"
       }
     },
     {
@@ -554,7 +558,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/4000/"
       }
     },
     {
@@ -1208,7 +1213,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/1604030/"
       }
     },
     {
@@ -1438,7 +1444,8 @@
         "caveat": "hackable"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/500/"
       }
     },
     {
@@ -1456,7 +1463,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/320/"
       }
     },
     {
@@ -1477,7 +1485,8 @@
         "checked": "2026-11-21"
       },
       "purchase": {
-        "store": "Steam"
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/9420/"
       }
     },
     {
