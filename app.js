@@ -22,6 +22,12 @@
     reported: { cls: "tag-rep", label: "Reported", hint: "Reported from hands-on experience with the game or mod" },
     unverified: { cls: "tag-unv", label: "Unverified", hint: "Usual server limit; test before relying on it" }
   };
+  const CAVEATS = {
+    limited: "PCGamingWiki lists LAN support as limited.",
+    hackable: "PCGamingWiki says LAN needs extra setup.",
+    unknown: "PCGamingWiki does not confirm LAN play; use a self-hosted server.",
+    false: "PCGamingWiki lists no LAN mode; play is online."
+  };
   const MODE_LABEL = { coop: "Co-op", versus: "Versus" };
 
   const state = { mode: "any", min: 0, genre: "all", q: "" };
@@ -160,7 +166,7 @@
     if (g.scripts) addLink("LAN scripts", g.scripts, "GitHub (LAN scripts)");
     art.append(modes);
     if (g.pcgw && g.pcgw.caveat) {
-      art.append(el("p", "caveat", g.pcgw.caveat === "limited" ? "PCGamingWiki lists LAN support as limited." : "PCGamingWiki says LAN needs extra setup."));
+      art.append(el("p", "caveat", CAVEATS[g.pcgw.caveat] || "PCGamingWiki does not confirm LAN play."));
     }
     art.append(links);
     return art;

@@ -439,20 +439,6 @@
     "onlinePlayers": "6",
     "fetched": "2026-11-21"
   },
-  "Talisman: Digital Classic Edition": {
-    "page": "Talisman: Digital Edition",
-    "url": "https://www.pcgamingwiki.com/wiki/Talisman:_Digital_Edition",
-    "hasNetworkBlock": true,
-    "lan": "false",
-    "lanPlayers": "",
-    "lanModes": "",
-    "lanNotes": "",
-    "local": "true",
-    "localPlayers": "6",
-    "online": "true",
-    "onlinePlayers": "6",
-    "fetched": "2026-11-21"
-  },
   "Quake": {
     "page": "Quake",
     "url": "https://www.pcgamingwiki.com/wiki/Quake",
@@ -733,20 +719,6 @@
     "onlinePlayers": "4",
     "fetched": "2026-11-21"
   },
-  "Heroes of Hammerwatch": {
-    "page": "Heroes of Hammerwatch",
-    "url": "https://www.pcgamingwiki.com/wiki/Heroes_of_Hammerwatch",
-    "hasNetworkBlock": true,
-    "lan": "false",
-    "lanPlayers": "",
-    "lanModes": "",
-    "lanNotes": "",
-    "local": "false",
-    "localPlayers": "",
-    "online": "true",
-    "onlinePlayers": "4",
-    "fetched": "2026-11-21"
-  },
   "Killing Floor 2": {
     "page": "Killing Floor 2",
     "url": "https://www.pcgamingwiki.com/wiki/Killing_Floor_2",
@@ -759,20 +731,6 @@
     "localPlayers": "6",
     "online": "true",
     "onlinePlayers": "6",
-    "fetched": "2026-11-21"
-  },
-  "Earth Defense Force 5": {
-    "page": "Earth Defense Force 5",
-    "url": "https://www.pcgamingwiki.com/wiki/Earth_Defense_Force_5",
-    "hasNetworkBlock": true,
-    "lan": "false",
-    "lanPlayers": "",
-    "lanModes": "",
-    "lanNotes": "",
-    "local": "true",
-    "localPlayers": "2",
-    "online": "true",
-    "onlinePlayers": "4",
     "fetched": "2026-11-21"
   },
   "Gears of War": {
@@ -801,20 +759,6 @@
     "localPlayers": "3",
     "online": "true",
     "onlinePlayers": "10",
-    "fetched": "2026-11-21"
-  },
-  "F.E.A.R. 3": {
-    "page": "F.E.A.R. 3",
-    "url": "https://www.pcgamingwiki.com/wiki/F.E.A.R._3",
-    "hasNetworkBlock": true,
-    "lan": "false",
-    "lanPlayers": "",
-    "lanModes": "",
-    "lanNotes": "",
-    "local": "hackable",
-    "localPlayers": "2",
-    "online": "true",
-    "onlinePlayers": "",
     "fetched": "2026-11-21"
   },
   "Baldur's Gate 3": {
@@ -1083,20 +1027,6 @@
     "onlinePlayers": "100",
     "fetched": "2026-11-21"
   },
-  "Sons of the Forest": {
-    "page": "Sons of the Forest",
-    "url": "https://www.pcgamingwiki.com/wiki/Sons_of_the_Forest",
-    "hasNetworkBlock": true,
-    "lan": "false",
-    "lanPlayers": "",
-    "lanModes": "",
-    "lanNotes": "",
-    "local": "false",
-    "localPlayers": "",
-    "online": "true",
-    "onlinePlayers": "8",
-    "fetched": "2026-11-21"
-  },
   "Don't Starve Together": {
     "page": "Don't Starve Together",
     "url": "https://www.pcgamingwiki.com/wiki/Don't_Starve_Together",
@@ -1122,6 +1052,90 @@
     "local": "hackable",
     "localPlayers": "",
     "online": "true",
+    "onlinePlayers": "",
+    "fetched": "2026-11-21"
+  },
+  "Double Action: Boogaloo": {
+    "page": "Double Action: Boogaloo",
+    "url": "https://www.pcgamingwiki.com/wiki/Double_Action:_Boogaloo",
+    "hasNetworkBlock": true,
+    "lan": "unknown",
+    "lanPlayers": "",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "hackable",
+    "localPlayers": "",
+    "online": "unknown",
+    "onlinePlayers": "",
+    "fetched": "2026-11-21"
+  },
+  "Fistful of Frags": {
+    "page": "Fistful of Frags",
+    "url": "https://www.pcgamingwiki.com/wiki/Fistful_of_Frags",
+    "hasNetworkBlock": true,
+    "lan": "true",
+    "lanPlayers": "",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "hackable",
+    "localPlayers": "",
+    "online": "true",
+    "onlinePlayers": "",
+    "fetched": "2026-11-21"
+  },
+  "Midnight Murder Club": {
+    "page": "Midnight Murder Club",
+    "url": "https://www.pcgamingwiki.com/wiki/Midnight_Murder_Club",
+    "hasNetworkBlock": true,
+    "lan": "false",
+    "lanPlayers": "",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "false",
+    "localPlayers": "",
+    "online": "true",
+    "onlinePlayers": "",
+    "fetched": "2026-11-21"
+  },
+  "Moonbase Alpha": {
+    "page": "Moonbase Alpha",
+    "url": "https://www.pcgamingwiki.com/wiki/Moonbase_Alpha",
+    "hasNetworkBlock": true,
+    "lan": "true",
+    "lanPlayers": "6",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "",
+    "localPlayers": "",
+    "online": "true",
+    "onlinePlayers": "6",
+    "fetched": "2026-11-21"
+  },
+  "Pirates, Vikings, and Knights II": {
+    "page": "Pirates, Vikings, and Knights II",
+    "url": "https://www.pcgamingwiki.com/wiki/Pirates,_Vikings,_and_Knights_II",
+    "hasNetworkBlock": true,
+    "lan": "true",
+    "lanPlayers": "",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "hackable",
+    "localPlayers": "",
+    "online": "true",
+    "onlinePlayers": "",
+    "fetched": "2026-11-21"
+  },
+  "Teeworlds": {
+    "page": "Teeworlds",
+    "url": "https://www.pcgamingwiki.com/wiki/Teeworlds",
+    "hasNetworkBlock": true,
+    "lan": "unknown",
+    "lanPlayers": "",
+    "lanModes": "",
+    "lanNotes": "",
+    "local": "",
+    "localPlayers": "",
+    "online": "unknown",
     "onlinePlayers": "",
     "fetched": "2026-11-21"
   }

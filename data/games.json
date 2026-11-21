@@ -1264,6 +1264,123 @@
         "lan": "true",
         "checked": "2026-11-21"
       }
+    },
+    {
+      "name": "Altitude",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 32,
+        "src": "checked"
+      },
+      "note": "2D plane combat; servers hold up to 16 vs 16",
+      "pcgwExempt": true,
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Altitude",
+        "lan": "unknown",
+        "checked": "2026-11-21",
+        "caveat": "unknown"
+      }
+    },
+    {
+      "name": "Double Action: Boogaloo",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 16,
+        "src": "unverified"
+      },
+      "note": "Slow-motion, acrobatic gunfights; server owners set the cap",
+      "pcgwExempt": true,
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Double_Action:_Boogaloo",
+        "lan": "unknown",
+        "checked": "2026-11-21",
+        "caveat": "unknown"
+      }
+    },
+    {
+      "name": "Fistful of Frags",
+      "genre": "arena",
+      "coop": {
+        "n": 6,
+        "src": "checked"
+      },
+      "versus": {
+        "n": 20,
+        "src": "checked"
+      },
+      "note": "Wild West shooter; official team map holds 20, co-op holds 6",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Fistful_of_Frags",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Midnight Murder Club",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 6,
+        "src": "checked"
+      },
+      "note": "Dark-mansion shooter where players hunt each other; online play only",
+      "pcgwExempt": true,
+      "onlineOnly": true,
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Midnight_Murder_Club",
+        "lan": "false",
+        "checked": "2026-11-21",
+        "caveat": "false"
+      }
+    },
+    {
+      "name": "Moonbase Alpha",
+      "genre": "coop",
+      "coop": {
+        "n": 6,
+        "src": "pcgw"
+      },
+      "versus": null,
+      "note": "Fix a damaged lunar base before the oxygen runs out",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Moonbase_Alpha",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Pirates, Vikings, and Knights II",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 32,
+        "src": "unverified"
+      },
+      "note": "Class-based melee and ranged team combat; server owners set the cap",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Pirates,_Vikings,_and_Knights_II",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
+    },
+    {
+      "name": "Teeworlds",
+      "genre": "arena",
+      "coop": null,
+      "versus": {
+        "n": 64,
+        "src": "unverified"
+      },
+      "note": "Fast 2D multiplayer shooter; server owners set the cap",
+      "pcgwExempt": true,
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Teeworlds",
+        "lan": "unknown",
+        "checked": "2026-11-21",
+        "caveat": "unknown"
+      }
     }
   ],
   "removedNoLan": [
@@ -1274,7 +1391,6 @@
     "Crab Champions",
     "PEAK",
     "Helldivers",
-    "Altitude",
     "Talisman: Digital Classic Edition",
     "Heroes of Hammerwatch",
     "Earth Defense Force 5",

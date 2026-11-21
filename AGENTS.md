@@ -4,7 +4,7 @@ How to keep this GitHub Pages site up to date. The page is static (`index.html`,
 
 ## Rules
 
-- **LAN only.** Index a game only if it has real LAN play (system link, LAN lobby, direct IP to a machine on the local network, or a dedicated server run on the LAN). Local split-screen and online-only matchmaking do not count. Single-player games are left out.
+- **LAN only.** Index a game only if it has real LAN play (system link, LAN lobby, direct IP to a machine on the local network, or a dedicated server run on the LAN). Local split-screen and online-only matchmaking do not count. Single-player games are left out. The user can ask for an exception (for example free online games such as Midnight Murder Club); mark those `"pcgwExempt": true`, and `"onlineOnly": true` when there is no LAN or self-hosted option. The card then shows a caveat instead of dropping the game.
 - **PCGamingWiki is canonical** for LAN player counts. Its "Network > Multiplayer types > LAN play" row has a status, a player count and the modes the count covers. We do not use Co-Optimus anywhere: no lookups, no links, no source tag.
 - **Co-op and versus are separate.** `coop` and `versus` each hold the most players one LAN session accepts in that mode, or `null` if the game lacks the mode.
 - **Mods, ports and community servers are their own entries** when their limits can differ from the base game (Halo Project Reclaimer, Halo CE with Chimera, CoD4X, OpenJK, ioquake3, OpenRA). Set `mod` (a short label) and `modUrl` (its home page) on them.

@@ -24,6 +24,7 @@ for (const g of data.games) {
   const p = pcgw[g.name];
   if (!p || !p.page) { next.push(g); continue; }               // no PCGamingWiki page: leave as is
   g.pcgw = { url: p.url, lan: p.lan || "unknown", checked: p.fetched };
+  if (p.lan !== "true") g.pcgw.caveat = p.lan || "unknown";      // "limited", "hackable", "unknown" or "false"
   if (g.pcgwExempt) { next.push(g); continue; }
   if (!KEEP.has(p.lan)) { removed.push(`${g.name} (LAN: ${p.lan || "blank"})`); continue; }
 
@@ -42,7 +43,6 @@ for (const g of data.games) {
     if (!modes) { if (g.coop) set("coop"); if (g.versus) set("versus"); }
     else { if (hasCoop) set("coop"); if (hasVersus) set("versus"); }
   }
-  if (p.lan !== "true") g.pcgw.caveat = p.lan;                  // "limited" or "hackable"
   next.push(g);
 }
 
