@@ -85,7 +85,7 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .rpg-pb:active { background: var(--surface-hi); }
 .rpg-pb[data-k="ArrowUp"] { grid-area: up; } .rpg-pb[data-k="ArrowLeft"] { grid-area: left; } .rpg-pb[data-k="ArrowRight"] { grid-area: right; } .rpg-pb[data-k="ArrowDown"] { grid-area: down; }
 .rpg-pact { width: 84px; height: 84px; border-radius: 50%; background: #ffc531; color: #2b1d12; border-color: #2b1d12; }
-@media (pointer: coarse) { .rpg-pad { display: flex; } .rpg-hint { display: none; } }
+@media (pointer: coarse), (hover: none), (any-pointer: coarse) { .rpg-pad { display: flex; } .rpg-hint { display: none; } }
 .rpg-lock { overflow: hidden; }
 .rpg.expanded { position: fixed; inset: 0; z-index: 100; background: var(--bg); padding: 12px; overflow: auto; display: flex; flex-direction: column; align-items: center; }
 .rpg.expanded > * { width: 100%; max-width: 960px; }
