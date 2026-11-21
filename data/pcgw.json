@@ -537,20 +537,6 @@
     "onlinePlayers": "32",
     "fetched": "2026-11-21"
   },
-  "Halo: Combat Evolved": {
-    "page": "Halo: Combat Evolved",
-    "url": "https://www.pcgamingwiki.com/wiki/Halo:_Combat_Evolved",
-    "hasNetworkBlock": true,
-    "lan": "true",
-    "lanPlayers": "",
-    "lanModes": "",
-    "lanNotes": "Versus",
-    "local": "hackable",
-    "localPlayers": "8",
-    "online": "true",
-    "onlinePlayers": "",
-    "fetched": "2026-11-21"
-  },
   "Daikatana": {
     "page": "Daikatana",
     "url": "https://www.pcgamingwiki.com/wiki/Daikatana",

@@ -124,7 +124,7 @@
         "n": 16,
         "src": "unverified"
       },
-      "note": "Custom maps and a dedicated server; same 16-player cap",
+      "note": "Custom maps and a dedicated server; no co-op campaign",
       "mod": "Halo Custom Edition with the Chimera patch",
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Halo:_Combat_Evolved",
@@ -677,23 +677,6 @@
         "lan": "true",
         "checked": "2026-11-21"
       }
-    },
-    {
-      "name": "Halo: Combat Evolved",
-      "genre": "arena",
-      "coop": null,
-      "versus": {
-        "n": 16,
-        "src": "unverified"
-      },
-      "note": "Fixes and updates for the PC release; no co-op campaign",
-      "pcgw": {
-        "url": "https://www.pcgamingwiki.com/wiki/Halo:_Combat_Evolved",
-        "lan": "true",
-        "checked": "2026-11-21"
-      },
-      "mod": "Halo CE with the Chimera patch",
-      "modUrl": "https://github.com/SnowyMouse/chimera"
     },
     {
       "name": "Daikatana",
