@@ -69,12 +69,42 @@
     ["Kettle chips", "#d9b36c"], ["Popcorn", "#f6efc8"], ["Gummy worms", "#e05a8a"]
   ];
   const SQ = {
-    5: ["Perfect crunch.", "Chef's kiss chips.", "10/10 would crunch."],
-    4: ["Pretty good chips.", "Solid. No notes."],
-    3: ["Chips. They exist.", "It's fine. It's chips."],
-    2: ["A bit stale...", "Way too salty."],
-    1: ["Stale. Who bought these?", "Tastes like the bag."]
+    5: ["Perfect crunch.", "Chef's kiss chips.", "10/10 would crunch.", "The crunch just echoed off the walls.", "I'd marry this bag.", "Somebody call the Michelin people.",
+      "That's a religious experience in a bag.", "Put this on my gravestone.", "I can hear angels. Or the fridge.", "Whoever bought these gets a statue."],
+    4: ["Pretty good chips.", "Solid. No notes.", "Respectable. I'd vouch for these in court.", "Above average. Quietly excellent.", "Crunchy with confidence.",
+      "Would eat again, would not write home about.", "A strong showing from the snack table."],
+    3: ["Chips. They exist.", "It's fine. It's chips.", "Neither good nor bad. Just calories with a logo.", "The snack equivalent of a shrug.",
+      "I ate it. I felt nothing.", "Technically food.", "Mid. Gloriously, aggressively mid."],
+    2: ["A bit stale...", "Way too salty.", "This bag has seen some things.", "Chewing this is a character-building exercise.",
+      "Tastes like a Tuesday.", "It's giving 'found in a couch cushion'.", "The crunch left. It took its dignity."],
+    1: ["Stale. Who bought these?", "Tastes like the bag.", "I've had better crunch from wet cardboard.", "This is a hostage situation for my teeth.",
+      "Somebody opened this in 2019.", "I would like to speak to the snack manager.", "Bold of them to call this food."]
   };
+  // Lines about one specific snack. They mix in with the quality lines above.
+  const SNACK_LINES = {
+    "Nacho cheese chips": ["My fingers are now legally orange.", "The cheese dust has entered my keyboard. It lives there now.", "Powdered cheese: the only dairy I trust.", "I left a cheese fingerprint on the mouse. Evidence."],
+    "Salt & vinegar chips": ["My tongue just filed a complaint.", "It's like being slapped by a pickle, lovingly.", "I can't feel my lips and I want more.", "Pucker up. This is a sour-based lifestyle."],
+    "BBQ chips": ["Smoky. Sweet. Suspiciously barbecue-adjacent.", "There has never been a pig near these chips and I respect that.", "Tastes like a cookout that happened to a potato.", "Smells like summer and bad decisions."],
+    "Sour cream & onion": ["Delicious now, ruinous at 3 AM.", "My breath is a weapon. I accept that.", "The onion is doing the heavy lifting here.", "Everyone near me will know. Everyone."],
+    "Ranch chips": ["Ranch on a chip. Civilization peaked.", "Somewhere a bottle of ranch is jealous.", "These taste like a salad's evil twin.", "Dipping not required. Dipping is for the weak."],
+    "Flamin' hot chips": ["Why did I do this. Why do I keep doing this.", "My face is red. My soul is also red.", "I regret nothing. My mouth regrets everything.", "Do NOT touch your eyes. Do NOT.", "The aftershock is arriving in three, two..."],
+    "Pretzels": ["Salt crystals the size of regret.", "A snack that's also a fidget toy.", "They snap like tiny, salty bones.", "Pretzels: the crunch for people who say they're being healthy."],
+    "Cheese puffs": ["They dissolve into pure orange dust. Magic.", "It's a cloud of cheese that lied to me about being solid.", "Fingers: orange. Conscience: clear.", "Puffed, powdered and proud."],
+    "Kettle chips": ["Thick, loud and expensive-feeling.", "These crunch like I'm stepping on a frozen lake.", "A chip with a personality. A loud one.", "My dentist just felt a disturbance."],
+    "Popcorn": ["There's a kernel stuck in my teeth. Forever.", "Half this bowl is unpopped kernels. A dental lottery.", "Buttery enough to short-circuit a keyboard.", "Eating popcorn mid-match is a crime and I'm a repeat offender."],
+    "Gummy worms": ["I bit the head off first. That's the rule.", "Chewy, sticky, mildly cursed.", "Worms are snacks now. Society moved on.", "Pulling them apart is half the fun. The other half is the sugar."]
+  };
+  function snackLine(s) { return chance(0.55) && SNACK_LINES[s.name] ? pick(SNACK_LINES[s.name]) : pick(SQ[s.q]); }
+  const SNACK_REVIEWS = [
+    (b, w) => `A bold ${b}, a cowardly ${w}. This table has range.`,
+    (b, w) => `${b}: a triumph. ${w}: a cry for help.`,
+    (b, w) => `I'd take ${b} into battle. I'd leave ${w} at the gas station.`,
+    (b, w) => `Tonight's ranking: ${b} on the throne, ${w} in exile.`,
+    (b, w) => `Let the record show ${b} was perfect and ${w} was a mistake.`,
+    (b, w) => `Critics say ${b} is the future. Critics also say ${w} should be recalled.`,
+    (b, w) => `If ${b} were a person, I'd vote for it. ${w} can walk home.`
+  ];
+  const SNACK_REPLIES = ["Facts.", "Hard disagree.", "You're not wrong.", "Put that on a plaque.", "Bro is reviewing snacks like it's the Oscars.", "I'm filing this under 'accurate'.", "Who made you the critic?", "I want to subscribe to your newsletter.", "Calm down, it's chips."];
   const CHAT = {
     gaming: ["gg", "Lag!!", "One more round", "Camper.", "That was a hit!", "Nice shot.", "Ping is 2ms. Beat that.", "Who has the CD key?", "Host migrated??", "Rematch."],
     hot: ["It's a sauna in here.", "Who cranked the heat?", "Open a window!", "I'm melting."],
@@ -555,7 +585,7 @@
     const avail = S.snacks.filter((s) => s.n > 0);
     if (!avail.length) { say(n, "No snacks?!"); return; }
     const s = pick(avail); s.n--;
-    say(n, pick(SQ[s.q]));
+    say(n, snackLine(s), 4.5);
   }
 
   // ---------- NPC think ----------
@@ -799,10 +829,11 @@
   function begin(own) {
     setupDay(own); phase = "play"; canvas.focus({ preventScroll: true });
     const pc = P.st.pc;
+    S.youUntil = 0;
     queue.push(() => openDialog({
       title: own ? "You brought..." : "Your PC is...",
-      body: `${pcLabel(pc)} ${own ? pick(WASTE) : TIER_FLAVOR[pc.tier]}`,
-      opts: [{ label: "Sit down and get started", run() {} }]
+      body: `${pcLabel(pc)} ${own ? pick(WASTE) : TIER_FLAVOR[pc.tier]} It's the one marked YOUR PC.`,
+      opts: [{ label: "Sit down and get started", run() { S.youUntil = anim + 10; } }]
     }));
   }
 
@@ -992,17 +1023,18 @@
   function eatSnack(s) {
     s.n--; S.stats.chips++; S.chipStreak++;
     P.belly = clamp(P.belly + 9); P.fun = clamp(P.fun + (s.q - 1) * 1.2 + 1);
-    const line = pick(SQ[s.q]);
-    say(P, line); log(`${s.name}: "${line}"`);
+    const line = snackLine(s);
+    say(P, line, 4.5); log(`${s.name}: "${line}"`);
     if (S.chipStreak === 5) log("Your fingers are orange now. Your keyboard will remember.");
     if (S.clock % 7 === 0) S.chipStreak = 0;
   }
   function reviewSnacks() {
     const best = S.snacks.reduce((a, b) => (b.q > a.q ? b : a));
     const worst = S.snacks.reduce((a, b) => (b.q < a.q ? b : a));
-    say(P, `${best.name.split(" ")[0]} good. ${worst.name.split(" ")[0]} bad.`, 4);
+    const nick = (s) => s.name.replace(/ chips$/i, "").replace(/^Flamin' hot$/i, "Flamin' hot").toLowerCase();
+    say(P, pick(SNACK_REVIEWS)(nick(best), nick(worst)), 5);
     const listener = seatedNpcs().filter((n) => !n.hp && Math.hypot(n.x - P.x, n.y - P.y) < 120);
-    if (listener.length && !chance(0.3)) { const n = pick(listener); say(n, pick(["Facts.", "Hard disagree.", "You're not wrong."]), 3); log(`${n.name} actually responds to your snack review.`); P.social = clamp(P.social + 6); }
+    if (listener.length && !chance(0.3)) { const n = pick(listener); say(n, pick(SNACK_REPLIES), 3.5); log(`${n.name} actually responds to your snack review.`); P.social = clamp(P.social + 6); }
     else { log("Nobody cares about your snack opinions."); S.stats.ignored++; }
   }
   function thermoAct() {
@@ -1413,6 +1445,54 @@
     R(cx - 5, cy - 5 + bob, 11, 11, "#2b1d12"); R(cx - 4, cy - 4 + bob, 9, 9, "#ffc531");
     ctx.font = FONT; ctx.fillStyle = "#2b1d12"; ctx.textBaseline = "top"; ctx.fillText("E", cx - 4, cy - 4 + bob + 1);
   }
+  // "This is your PC": a pulsing outline and tag for the first seconds of play, then a small arrow whenever you are away from the desk.
+  function drawYourPc() {
+    const st = P.st, d = st.desk, away = P.act !== "sit", intro = anim < S.youUntil;
+    if (!intro && !away) return;
+    const bob = Math.round(Math.sin(anim * 6) * 1.5), cx = d.x + 24;
+    if (intro) {
+      const pulse = 0.55 + 0.45 * Math.sin(anim * 5);
+      ctx.strokeStyle = `rgba(255,197,49,${pulse})`; ctx.lineWidth = 2;
+      ctx.strokeRect(d.x - 1, d.y - 13, 50, 31);
+      ctx.font = FONT; ctx.textBaseline = "top";
+      const label = "YOUR PC", w = Math.ceil(ctx.measureText(label).width) + 8, lx = clamp(cx - w / 2, 2, W - w - 2), ly = Math.max(d.y - 34, 2) + bob;
+      R(lx - 1, ly - 1, w + 2, 14, "#2b1d12"); R(lx, ly, w, 12, "#ffc531");
+      ctx.fillStyle = "#2b1d12"; ctx.fillText(label, lx + 4, ly + 2);
+      R(cx - 2, ly + 13, 5, 2, "#2b1d12"); R(cx - 1, ly + 15, 3, 2, "#2b1d12"); R(cx - 1, ly + 12, 3, 3, "#ffc531");
+    } else {
+      const ay = Math.max(d.y - 22, 2) + bob;
+      R(cx - 5, ay, 11, 5, "#2b1d12"); R(cx - 4, ay + 1, 9, 3, "#ffc531");
+      R(cx - 4, ay + 5, 9, 2, "#2b1d12"); R(cx - 2, ay + 7, 5, 2, "#2b1d12"); R(cx, ay + 9, 1, 1, "#2b1d12");
+      R(cx - 3, ay + 5, 7, 1, "#ffc531"); R(cx - 1, ay + 6, 3, 1, "#ffc531"); R(cx, ay + 7, 1, 1, "#ffc531");
+    }
+  }
+  // On-canvas controls HUD: key caps along the bottom edge, plus a lit prompt for whatever E would do right now.
+  const COARSE = matchMedia("(pointer: coarse), (hover: none), (any-pointer: coarse)").matches;
+  function drawControls() {
+    const bh = 15, by = H - bh, ty = by + 4;
+    ctx.font = FONT; ctx.textBaseline = "top";
+    R(0, by, W, bh, "rgba(20,14,10,.82)"); R(0, by, W, 1, "rgba(255,255,255,.18)");
+    const cap = (x, label, on) => {
+      const w = Math.ceil(ctx.measureText(label).width) + 6;
+      R(x, by + 2, w, 11, on ? "#2b1d12" : "#6b5a48"); R(x, by + 2, w, 9, on ? "#ffc531" : "#e8e0cc");
+      ctx.fillStyle = "#2b1d12"; ctx.fillText(label, x + 3, ty - 1);
+      return w;
+    };
+    const word = (x, text, c) => { ctx.fillStyle = c; ctx.fillText(text, x, ty); return Math.ceil(ctx.measureText(text).width); };
+    let x = 4;
+    if (!COARSE) {
+      x += cap(x, "WASD", false) + 4; x += word(x, "MOVE", "#e8e0cc") + 10;
+      x += cap(x, "E", false) + 4; x += word(x, "ACT", "#e8e0cc") + 10;
+    }
+    const t = S._t;
+    if (t && !sleeping()) {
+      const label = (t.label + (t.label === "Pizza table" && S.pizza.slices ? ` (${S.pizza.slices})` : "")).toUpperCase();
+      const w = Math.ceil(ctx.measureText(label).width) + 25, px = COARSE ? 4 : Math.max(x, W - w - 4);
+      R(px, by + 1, w, 13, "#2b1d12"); R(px + 1, by + 2, w - 2, 11, "#ffc531");
+      ctx.fillStyle = "#2b1d12"; ctx.fillText("E", px + 5, ty); ctx.fillText(label, px + 19, ty);
+      R(px + 15, by + 3, 1, 9, "rgba(43,29,18,.35)");
+    } else if (COARSE) word(4, "TAP TO WALK", "#e8e0cc");
+  }
   function draw() {
     ctx.drawImage(bg, 0, 0);
     drawWindow(); drawThermoLed(); drawTableItems();
@@ -1430,9 +1510,11 @@
       if (f.state === "hot") { ctx.fillStyle = "rgba(255,110,50,.1)"; ctx.fillRect(0, 0, W, H); }
       else if (f.state === "cold") { ctx.fillStyle = "rgba(110,170,255,.12)"; ctx.fillRect(0, 0, W, H); }
     }
+    if (phase === "play") drawYourPc();
     if (phase === "play" && !dlgOpen) { const t = sleeping() ? null : findTarget(); if (t) drawMarker(t); S._t = t; }
     folks.forEach(drawBubble);
     if (sleeping() && phase === "play") { ctx.fillStyle = "rgba(0,0,20,.25)"; ctx.fillRect(0, 0, W, H); }
+    if (phase === "play" && !dlgOpen) drawControls();
   }
 
   // ---------- HUD ----------

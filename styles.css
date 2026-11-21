@@ -85,7 +85,7 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .rpg-pb:active { background: var(--surface-hi); }
 .rpg-pb[data-k="ArrowUp"] { grid-area: up; } .rpg-pb[data-k="ArrowLeft"] { grid-area: left; } .rpg-pb[data-k="ArrowRight"] { grid-area: right; } .rpg-pb[data-k="ArrowDown"] { grid-area: down; }
 .rpg-pact { width: 84px; height: 84px; border-radius: 50%; background: #ffc531; color: #2b1d12; border-color: #2b1d12; }
-@media (pointer: coarse), (hover: none), (any-pointer: coarse) { .rpg-pad { display: flex; } .rpg-hint { display: none; } }
+@media (pointer: coarse), (hover: none), (any-pointer: coarse) { .rpg-pad { display: flex; } }
 .rpg-lock { overflow: hidden; }
 .rpg.expanded { position: fixed; inset: 0; z-index: 100; background: var(--bg); padding: 12px; overflow: auto; display: flex; flex-direction: column; align-items: center; }
 .rpg.expanded > * { width: 100%; max-width: 960px; }
@@ -107,7 +107,7 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .rpg-mb::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 7px, rgba(14,19,24,.55) 7px 8px); }
 .rpg-m.low .rpg-ml { color: #FF8A7A; }
 .rpg-m.low i { background: #FF5A47 !important; }
-.rpg-hint { margin-top: 8px; color: var(--muted); font-size: 0.8125rem; min-height: 1.3em; }
+.rpg-hint { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } /* screen readers only; the on-canvas HUD is the visual hint */
 .rpg-log { margin-top: 6px; display: grid; gap: 2px; font-size: 0.8125rem; color: var(--muted); min-height: 5.6em; }
 .rpg-log li:first-child { color: var(--text); }
 
