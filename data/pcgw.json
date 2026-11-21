@@ -1166,5 +1166,19 @@
     "online": "limited",
     "onlinePlayers": "8",
     "fetched": "2026-11-21"
+  },
+  "Alien Swarm: Reactive Drop": {
+    "page": "Alien Swarm: Reactive Drop",
+    "url": "https://www.pcgamingwiki.com/wiki/Alien_Swarm:_Reactive_Drop",
+    "hasNetworkBlock": true,
+    "lan": "true",
+    "lanPlayers": "32",
+    "lanModes": "Co-op, Versus",
+    "lanNotes": "8 (Co-op) or 32 (Deathmatch) marines, up to 32 total including spectators",
+    "local": "hackable",
+    "localPlayers": "8",
+    "online": "true",
+    "onlinePlayers": "32",
+    "fetched": "2026-11-21"
   }
 }

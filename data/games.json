@@ -1479,6 +1479,26 @@
       "purchase": {
         "store": "Steam"
       }
+    },
+    {
+      "name": "Alien Swarm: Reactive Drop",
+      "genre": "coop",
+      "coop": {
+        "n": 8,
+        "src": "checked",
+        "pin": true
+      },
+      "versus": {
+        "n": 32,
+        "src": "checked",
+        "pin": true
+      },
+      "note": "Top-down co-op shooter; 8 marines in co-op, 32 in Deathmatch (spectators count toward 32)",
+      "pcgw": {
+        "url": "https://www.pcgamingwiki.com/wiki/Alien_Swarm:_Reactive_Drop",
+        "lan": "true",
+        "checked": "2026-11-21"
+      }
     }
   ],
   "removedNoLan": [
