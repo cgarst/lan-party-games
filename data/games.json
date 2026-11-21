@@ -319,14 +319,15 @@
       "name": "SWAT 4",
       "genre": "tactical",
       "coop": {
-        "n": 8,
-        "src": "checked"
+        "n": 5,
+        "src": "checked",
+        "pin": true
       },
       "versus": {
         "n": 16,
         "src": "unverified"
       },
-      "note": "Co-op campaign missions or competitive rounds",
+      "note": "Five-player co-op campaign missions or 16-player competitive rounds",
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/SWAT_4",
         "lan": "true",
@@ -337,14 +338,15 @@
       "name": "SWAT 4: Stetchkov Syndicate",
       "genre": "tactical",
       "coop": {
-        "n": 8,
-        "src": "unverified"
+        "n": 10,
+        "src": "checked",
+        "pin": true
       },
       "versus": {
         "n": 16,
         "src": "unverified"
       },
-      "note": "Expansion; assumed to match SWAT 4",
+      "note": "Expansion raises co-op from 5 to 10 players (one team of 10, or two teams of up to 10 total); versus stays at 16",
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/SWAT_4",
         "lan": "true",
