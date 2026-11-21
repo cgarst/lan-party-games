@@ -30,8 +30,9 @@
   };
   const MODE_LABEL = { coop: "Co-op", versus: "Versus" };
 
-  const state = { mode: "any", min: 0, genre: "all", q: "" };
+  const state = { mode: "any", min: 0, genre: "all", q: "", offline: false };
   const norm = (s) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+  const needsInternet = (g) => !!g.internet;
   const matchesText = (g) => {
     if (!state.q) return true;
     const hay = norm([g.name, g.mod, g.note].filter(Boolean).join(" "));
@@ -93,6 +94,11 @@
     const modes = $("modes");
     const head = $("headcount");
     const genres = $("genres");
+    const network = $("network");
+    network.replaceChildren(
+      chip("Any", !state.offline, () => { state.offline = false; sync(); }),
+      chip("Works offline", state.offline, () => { state.offline = true; sync(); })
+    );
     modes.replaceChildren(...MODES.map((m) => chip(m.label, state.mode === m.id, () => { state.mode = m.id; sync(); })));
     head.replaceChildren(
       chip("Any", state.min === 0, () => { state.min = 0; sync(); }),
@@ -165,7 +171,12 @@
     if (g.pcgw) addLink("PCGamingWiki", g.pcgw.url, "PCGamingWiki");
     if (g.scripts) addLink("LAN scripts", g.scripts, "GitHub (LAN scripts)");
     art.append(modes);
-    if (g.pcgw && g.pcgw.caveat) {
+    if (g.internet) {
+      const b = el("p", "net net-" + g.internet.level);
+      b.append(el("strong", "", g.internet.level === "required" ? "Needs internet" : "Internet for sign-in or server"), document.createTextNode(" " + g.internet.note));
+      art.append(b);
+    }
+    if (g.pcgw && g.pcgw.caveat && !g.internet) {
       art.append(el("p", "caveat", CAVEATS[g.pcgw.caveat] || "PCGamingWiki does not confirm LAN play."));
     }
     art.append(links);
@@ -209,7 +220,7 @@
 
       let visible = 0;
       entries.forEach(({ node, game }) => {
-        const ok = genreOk && matchesText(game) && relevant(game) > 0 && relevant(game) >= state.min;
+        const ok = genreOk && (!state.offline || !needsInternet(game)) && matchesText(game) && relevant(game) > 0 && relevant(game) >= state.min;
         const wasHidden = node.hidden;
         node.hidden = !ok;
         if (ok) {
@@ -243,6 +254,7 @@
   $("reset").addEventListener("click", () => {
     state.q = "";
     $("q").value = "";
+    state.offline = false;
     state.mode = "any";
     state.min = 0;
     state.genre = "all";

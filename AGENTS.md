@@ -75,6 +75,15 @@ PCGamingWiki's single LAN count can be wrong for one mode (Left 4 Dead 2 holds 4
 
 Prefer a real source over `unverified`, and say what it was in the commit message.
 
+### Internet dependencies
+
+Some games need internet even when the players are on one LAN. Flag them on the game with `"internet": { "level": "required" | "partial", "note": "..." }`:
+
+- `required`: multiplayer does not work without internet (no LAN mode, or a mode that needs an online connection).
+- `partial`: play happens on the LAN, but sign-in, activation or a server component needs internet.
+
+Base the flag on a stated source, usually the PCGamingWiki page (search the whole page, not just the LAN row: account requirements and DRM notes live elsewhere). Do not flag defunct GameSpy-style master servers: those only affect internet play. The card shows a badge and the "Works offline" filter hides flagged games.
+
 ### LAN script repos
 
 Games with LAN server scripts get a `scripts` URL (the card shows a "LAN scripts" link). The list lives at https://zathu.net/#lan-vault. Current repos: `lanscript-cod4`, `lanscript-quake3`, `reclaimer-lan` (and `lanscript-cod5`, which has no matching game here). When a game gains a repo, add its GitHub URL as `scripts`.

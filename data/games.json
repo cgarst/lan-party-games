@@ -170,7 +170,11 @@
         "lan": "true",
         "checked": "2026-11-21"
       },
-      "scripts": "https://github.com/cgarst/reclaimer-lan"
+      "scripts": "https://github.com/cgarst/reclaimer-lan",
+      "internet": {
+        "level": "partial",
+        "note": "Halo: The Master Chief Collection needs a Microsoft account."
+      }
     },
     {
       "name": "Jedi Knight Academy",
@@ -936,6 +940,10 @@
         "url": "https://www.pcgamingwiki.com/wiki/Gears_5",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Needs an Xbox Live account, and co-op requires an online connection."
       }
     },
     {
@@ -1182,6 +1190,10 @@
         "url": "https://www.pcgamingwiki.com/wiki/Valheim",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "internet": {
+        "level": "partial",
+        "note": "Players join over LAN, but the dedicated server itself needs internet access."
       }
     },
     {
@@ -1248,6 +1260,10 @@
         "url": "https://www.pcgamingwiki.com/wiki/Don't_Starve_Together",
         "lan": "true",
         "checked": "2026-11-21"
+      },
+      "internet": {
+        "level": "partial",
+        "note": "Needs a Klei account to play online."
       }
     },
     {
@@ -1288,9 +1304,9 @@
       "coop": null,
       "versus": {
         "n": 16,
-        "src": "unverified"
+        "src": "checked"
       },
-      "note": "Slow-motion, acrobatic gunfights; server owners set the cap",
+      "note": "Slow-motion, acrobatic gunfights; 16 is the community-reported cap",
       "pcgwExempt": true,
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Double_Action:_Boogaloo",
@@ -1325,14 +1341,17 @@
         "n": 6,
         "src": "checked"
       },
-      "note": "Dark-mansion shooter where players hunt each other; online play only",
+      "note": "Dark-mansion shooter where players hunt each other",
       "pcgwExempt": true,
-      "onlineOnly": true,
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Midnight_Murder_Club",
         "lan": "false",
         "checked": "2026-11-21",
         "caveat": "false"
+      },
+      "internet": {
+        "level": "required",
+        "note": "Online play only; there is no LAN mode."
       }
     },
     {
@@ -1358,7 +1377,7 @@
         "n": 32,
         "src": "unverified"
       },
-      "note": "Class-based melee and ranged team combat; server owners set the cap",
+      "note": "Class-based melee and ranged team combat; server owners set the cap, and 32 works in a LAN-mode setup",
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Pirates,_Vikings,_and_Knights_II",
         "lan": "true",
@@ -1370,10 +1389,10 @@
       "genre": "arena",
       "coop": null,
       "versus": {
-        "n": 64,
-        "src": "unverified"
+        "n": 16,
+        "src": "checked"
       },
-      "note": "Fast 2D multiplayer shooter; server owners set the cap",
+      "note": "Up to 16 play (the 0.7.5 server code caps player slots at 16); 64 connections including spectators",
       "pcgwExempt": true,
       "pcgw": {
         "url": "https://www.pcgamingwiki.com/wiki/Teeworlds",

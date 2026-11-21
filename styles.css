@@ -172,3 +172,8 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .search:focus-visible { background: var(--surface-hi); }
 a.mod { text-decoration: none; transition: background-color var(--duration-quick) var(--ease-smooth-out); }
 a.mod:hover { background: color-mix(in srgb, var(--g) 14%, transparent); }
+
+.net { margin: 0; padding: 8px 10px; font-size: 0.875rem; border-radius: var(--radius-s); border-left: 3px solid; background: var(--bg); color: var(--muted); }
+.net strong { color: var(--text); font-weight: 600; }
+.net-required { border-color: #FF8A7A; }
+.net-partial { border-color: #E3C99A; }
