@@ -66,7 +66,8 @@
         "lan": "true",
         "checked": "2026-11-21"
       },
-      "scripts": "https://github.com/cgarst/lanscript-quake3"
+      "scripts": "https://github.com/cgarst/lanscript-quake3",
+      "modUrl": "https://github.com/ioquake/ioq3"
     },
     {
       "name": "Unreal Tournament",
@@ -147,7 +148,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/Halo_Online",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "modUrl": "https://github.com/ElDewrito/ElDorito"
     },
     {
       "name": "Halo Project Reclaimer",
@@ -186,7 +188,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/Star_Wars:_Jedi_Knight_-_Jedi_Academy",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "modUrl": "https://github.com/JACoders/OpenJK"
     },
     {
       "name": "Duskworld",
@@ -306,7 +309,8 @@
         "lan": "true",
         "checked": "2026-11-21"
       },
-      "scripts": "https://github.com/cgarst/lanscript-cod4"
+      "scripts": "https://github.com/cgarst/lanscript-cod4",
+      "modUrl": "https://github.com/callofduty4x/CoD4x_Server"
     },
     {
       "name": "SWAT 4",
@@ -459,7 +463,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/OpenRA",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "modUrl": "https://www.openra.net/"
     },
     {
       "name": "OpenRA: Tiberian Dawn",
@@ -478,7 +483,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/OpenRA",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "modUrl": "https://www.openra.net/"
     },
     {
       "name": "OpenRA: Dune 2000",
@@ -497,7 +503,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/OpenRA",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "modUrl": "https://www.openra.net/"
     },
     {
       "name": "Rise of Legends",
