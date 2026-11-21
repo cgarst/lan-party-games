@@ -124,6 +124,15 @@
         <div class="rpg-opts"></div>
       </div>
     </div>
+    <div class="rpg-pad" role="group" aria-label="Touch controls">
+      <div class="rpg-dpad">
+        <button type="button" class="rpg-pb" data-k="ArrowUp" aria-label="Walk up">▲</button>
+        <button type="button" class="rpg-pb" data-k="ArrowLeft" aria-label="Walk left">◀</button>
+        <button type="button" class="rpg-pb" data-k="ArrowRight" aria-label="Walk right">▶</button>
+        <button type="button" class="rpg-pb" data-k="ArrowDown" aria-label="Walk down">▼</button>
+      </div>
+      <button type="button" class="rpg-pb rpg-pact" aria-label="Interact">E</button>
+    </div>
     <div class="rpg-top"><span class="rpg-clock"></span><span class="rpg-temp"></span><span class="rpg-speeds" role="group" aria-label="Game speed"></span></div>
     <p class="rpg-pcline"></p>
     <div class="rpg-meters"></div>
@@ -1111,6 +1120,18 @@
     if (!dlgOpen) return;
     if (e.key === "Escape" && !dlgModal) { e.preventDefault(); closeDialog(); return; }
     if (/^[1-9]$/.test(e.key)) { const b = el.opts.children[Number(e.key) - 1]; if (b && !b.disabled) { e.preventDefault(); b.click(); } }
+  });
+  // touch controls (shown on coarse pointers via CSS)
+  root.querySelectorAll(".rpg-pb[data-k]").forEach((b) => {
+    const k = b.dataset.k;
+    const up = () => keys.delete(k);
+    b.addEventListener("pointerdown", (e) => { e.preventDefault(); b.setPointerCapture(e.pointerId); if (!dlgOpen && phase === "play") keys.add(k); });
+    b.addEventListener("pointerup", up); b.addEventListener("pointercancel", up); b.addEventListener("lostpointercapture", up);
+    b.addEventListener("contextmenu", (e) => e.preventDefault());
+  });
+  root.querySelector(".rpg-pact").addEventListener("click", () => {
+    if (dlgOpen || phase !== "play" || sleeping()) return;
+    const t = findTarget(); if (t) t.act();
   });
   canvas.addEventListener("click", (e) => {
     canvas.focus({ preventScroll: true });
