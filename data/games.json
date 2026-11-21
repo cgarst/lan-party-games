@@ -1303,7 +1303,8 @@
       "internet": {
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
-      }
+      },
+      "steam": "https://store.steampowered.com/app/41300/"
     },
     {
       "name": "Double Action: Boogaloo",
@@ -1324,7 +1325,8 @@
       "internet": {
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
-      }
+      },
+      "steam": "https://store.steampowered.com/app/317360/"
     },
     {
       "name": "Fistful of Frags",
@@ -1346,7 +1348,8 @@
       "internet": {
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
-      }
+      },
+      "steam": "https://store.steampowered.com/app/265630/"
     },
     {
       "name": "Midnight Murder Club",
@@ -1367,6 +1370,10 @@
       "internet": {
         "level": "required",
         "note": "Online play only; there is no LAN mode."
+      },
+      "purchase": {
+        "store": "Steam",
+        "url": "https://store.steampowered.com/app/2698870/"
       }
     },
     {
@@ -1386,7 +1393,8 @@
       "internet": {
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
-      }
+      },
+      "steam": "https://store.steampowered.com/app/39000/"
     },
     {
       "name": "Pirates, Vikings, and Knights II",
@@ -1401,7 +1409,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/Pirates,_Vikings,_and_Knights_II",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "steam": "https://store.steampowered.com/app/17570/"
     },
     {
       "name": "Teeworlds",
@@ -1422,7 +1431,8 @@
       "internet": {
         "level": "required",
         "note": "Reported: multiplayer needs an internet connection, even with everyone on the same network."
-      }
+      },
+      "steam": "https://store.steampowered.com/app/380840/"
     },
     {
       "name": "Left 4 Dead",
@@ -1507,7 +1517,8 @@
         "url": "https://www.pcgamingwiki.com/wiki/Alien_Swarm:_Reactive_Drop",
         "lan": "true",
         "checked": "2026-11-21"
-      }
+      },
+      "steam": "https://store.steampowered.com/app/563560/"
     }
   ],
   "removedNoLan": [
