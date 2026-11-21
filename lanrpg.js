@@ -35,9 +35,10 @@
   const WASTE = [
     "It will run every game here at 900 FPS and nobody will care. Total waste.",
     "Four thousand dollars of hardware, about to play Counter-Strike 1.6 against a Pentium III.",
-    "The RTX will idle at 3% while everyone else argues about pizza. Tragic.",
-    "It could run anything on this list in 4K. The party runs on 640x480 and vibes.",
-    "Your GPU is about to spend nine hours rendering a 2004 deathmatch. It deserves better."
+    "The RTX will idle at 3% while everyone argues about pizza. Tragic.",
+    "It could run anything here in 4K. The party runs on 640x480 and vibes.",
+    "Your GPU is about to spend nine hours rendering a 2004 deathmatch. It deserves better.",
+    "Your fans will never spin up. They'll just sit there, judging a beige tower."
   ];
   const NAMES = ["Zathu", "Nephron", "Lanarchy", "Blacktwin", "Meatpipe", "Wham", "Yung", "CainDeMoore", "Maxim", "Trees", "bortio", "Joe", "Tyrelie", "vrt"];
   const MEM_LINES = ["Justler would have loved this.", "Jeffro would've camped that corner.", "gg, Justler.", "Jeffro never even needed the CD key.", "Somewhere, Justler is winning.", "Miss you, Jeffro."];
@@ -69,52 +70,48 @@
     ["Kettle chips", "#d9b36c"], ["Popcorn", "#f6efc8"], ["Gummy worms", "#e05a8a"]
   ];
   const SQ = {
-    5: ["Perfect crunch.", "Chef's kiss chips.", "10/10 would crunch.", "The crunch just echoed off the walls.", "I'd marry this bag.", "Somebody call the Michelin people.",
-      "That's a religious experience in a bag.", "Put this on my gravestone.", "I can hear angels. Or the fridge.", "Whoever bought these gets a statue."],
-    4: ["Pretty good chips.", "Solid. No notes.", "Respectable. I'd vouch for these in court.", "Above average. Quietly excellent.", "Crunchy with confidence.",
-      "Would eat again, would not write home about.", "A strong showing from the snack table."],
-    3: ["Chips. They exist.", "It's fine. It's chips.", "Neither good nor bad. Just calories with a logo.", "The snack equivalent of a shrug.",
-      "I ate it. I felt nothing.", "Technically food.", "Mid. Gloriously, aggressively mid."],
-    2: ["A bit stale...", "Way too salty.", "This bag has seen some things.", "Chewing this is a character-building exercise.",
-      "Tastes like a Tuesday.", "It's giving 'found in a couch cushion'.", "The crunch left. It took its dignity."],
-    1: ["Stale. Who bought these?", "Tastes like the bag.", "I've had better crunch from wet cardboard.", "This is a hostage situation for my teeth.",
-      "Somebody opened this in 2019.", "I would like to speak to the snack manager.", "Bold of them to call this food."]
+    1: ["I've had better crunch from wet cardboard.", "Somebody opened this in 2019 and left. For years.", "I'd like to speak to the snack manager.", "Bold of them to call this food. Bold and wrong.", "This is a hostage situation for my teeth.", "Tastes like the bag. Wait, no. The bag tastes better."],
+    2: ["This bag has seen some things. None of them good.", "Tastes like a Tuesday. A long one.", "The crunch left. It took its dignity.", "It's giving 'found in a couch cushion'.", "Chewing this builds character. I did not ask for character.", "Slightly stale. Fully committed."],
+    3: ["Chips. They exist. I checked.", "The snack equivalent of a shrug.", "I ate it. I felt nothing. Nothing hurt. Nothing helped.", "Mid. Gloriously, aggressively mid.", "I'm not saying it's bad. I'm saying I'm still hungry.", "A calorie with a logo on it."],
+    4: ["Solid. No notes. Okay, one note: more.", "Respectable. I'd vouch for these, but not in court.", "Crunchy with confidence.", "A strong showing from the snack table, sir.", "Not a masterpiece. A very good Tuesday.", "Would eat again. Am eating again."],
+    5: ["Perfect crunch.", "I'd keep an eye on this bag. Which eye? Both.", "The crunch just echoed. Sound engineers wept.", "My taste buds want a word with the manager. To compliment him.", "I'd marry this bag, but I'm already committed to the couch.", "Somebody get this snack a lawyer, it's too good to be legal.", "Put this on my gravestone. Next to Justler's.", "Statue. Whoever bought these. Bronze."]
   };
   // Lines about one specific snack. They mix in with the quality lines above.
   const SNACK_LINES = {
-    "Nacho cheese chips": ["My fingers are now legally orange.", "The cheese dust has entered my keyboard. It lives there now.", "Powdered cheese: the only dairy I trust.", "I left a cheese fingerprint on the mouse. Evidence."],
-    "Salt & vinegar chips": ["My tongue just filed a complaint.", "It's like being slapped by a pickle, lovingly.", "I can't feel my lips and I want more.", "Pucker up. This is a sour-based lifestyle."],
-    "BBQ chips": ["Smoky. Sweet. Suspiciously barbecue-adjacent.", "There has never been a pig near these chips and I respect that.", "Tastes like a cookout that happened to a potato.", "Smells like summer and bad decisions."],
-    "Sour cream & onion": ["Delicious now, ruinous at 3 AM.", "My breath is a weapon. I accept that.", "The onion is doing the heavy lifting here.", "Everyone near me will know. Everyone."],
-    "Ranch chips": ["Ranch on a chip. Civilization peaked.", "Somewhere a bottle of ranch is jealous.", "These taste like a salad's evil twin.", "Dipping not required. Dipping is for the weak."],
-    "Flamin' hot chips": ["Why did I do this. Why do I keep doing this.", "My face is red. My soul is also red.", "I regret nothing. My mouth regrets everything.", "Do NOT touch your eyes. Do NOT.", "The aftershock is arriving in three, two..."],
-    "Pretzels": ["Salt crystals the size of regret.", "A snack that's also a fidget toy.", "They snap like tiny, salty bones.", "Pretzels: the crunch for people who say they're being healthy."],
-    "Cheese puffs": ["They dissolve into pure orange dust. Magic.", "It's a cloud of cheese that lied to me about being solid.", "Fingers: orange. Conscience: clear.", "Puffed, powdered and proud."],
-    "Kettle chips": ["Thick, loud and expensive-feeling.", "These crunch like I'm stepping on a frozen lake.", "A chip with a personality. A loud one.", "My dentist just felt a disturbance."],
-    "Popcorn": ["There's a kernel stuck in my teeth. Forever.", "Half this bowl is unpopped kernels. A dental lottery.", "Buttery enough to short-circuit a keyboard.", "Eating popcorn mid-match is a crime and I'm a repeat offender."],
-    "Gummy worms": ["I bit the head off first. That's the rule.", "Chewy, sticky, mildly cursed.", "Worms are snacks now. Society moved on.", "Pulling them apart is half the fun. The other half is the sugar."]
+    "Nacho cheese chips": ["My fingers are now legally orange.", "The cheese dust entered my keyboard. It pays rent now.", "I touched the mouse. It's a crime scene.", "Orange dust: the only dairy I trust."],
+    "Salt & vinegar chips": ["My tongue filed a complaint. I'm eating more.", "Like being slapped by a pickle, lovingly.", "I can't feel my lips. Lips were overrated.", "Pucker up. This is a sour-based lifestyle."],
+    "BBQ chips": ["Tastes like a cookout that happened to a potato.", "No pig was involved and I respect that.", "Smoky, sweet, suspiciously barbecue-adjacent.", "Smells like summer and poor decisions."],
+    "Sour cream & onion": ["Delicious now. Ruinous at 3 AM.", "My breath is a weapon. I accept that.", "Everyone near me will know. Everyone.", "The onion is doing the heavy lifting. The cream is a hype man."],
+    "Ranch chips": ["Ranch on a chip. Civilization peaked.", "Somewhere, a bottle of ranch feels replaced.", "Dipping is optional. Dipping is for people with time.", "A salad's evil twin."],
+    "Flamin' hot chips": ["Why did I do this. Why do I keep doing this.", "My face is red. My soul filed for leave.", "Do NOT touch your eyes. I touched my eyes.", "The aftershock arrives in three, two...", "I can see sounds now."],
+    "Pretzels": ["Salt crystals the size of regret.", "A snack that doubles as a fidget toy.", "They snap like tiny, salty bones.", "Pretzels: the crunch for people who claim they're being healthy."],
+    "Cheese puffs": ["They dissolve into orange dust. Fine print: my hands.", "A cloud of cheese that lied about being solid.", "Fingers: orange. Conscience: clear.", "Puffed, powdered and unapologetic."],
+    "Kettle chips": ["These crunch like stepping on a frozen lake.", "Thick, loud and priced like a minor luxury.", "A chip with a personality. A loud one.", "My dentist just felt a disturbance."],
+    "Popcorn": ["A kernel moved into my teeth. Permanent resident.", "Half this bowl is unpopped. A dental lottery.", "So buttery my keyboard needs a towel.", "Popcorn mid-match: a crime, and I'm a repeat offender."],
+    "Gummy worms": ["I bit the head off first. That's the rule.", "Chewy, sticky, mildly cursed.", "Worms are snacks now. Society moved on.", "Pulling them apart is half the fun. The other half is sugar."]
   };
   function snackLine(s) { return chance(0.55) && SNACK_LINES[s.name] ? pick(SNACK_LINES[s.name]) : pick(SQ[s.q]); }
   const SNACK_REVIEWS = [
     (b, w) => `A bold ${b}, a cowardly ${w}. This table has range.`,
     (b, w) => `${b}: a triumph. ${w}: a cry for help.`,
-    (b, w) => `I'd take ${b} into battle. I'd leave ${w} at the gas station.`,
+    (b, w) => `I'd take ${b} into battle. ${w} stays in the car.`,
     (b, w) => `Tonight's ranking: ${b} on the throne, ${w} in exile.`,
-    (b, w) => `Let the record show ${b} was perfect and ${w} was a mistake.`,
-    (b, w) => `Critics say ${b} is the future. Critics also say ${w} should be recalled.`,
-    (b, w) => `If ${b} were a person, I'd vote for it. ${w} can walk home.`
+    (b, w) => `Let the record show ${b} was perfect and ${w} was a clerical error.`,
+    (b, w) => `Critics call ${b} the future. They also want ${w} recalled.`,
+    (b, w) => `I'm not saying ${w} is bad. I'm saying ${b} exists.`,
+    (b, w) => `${b} and ${w} share a table. Only one of them knows why.`
   ];
-  const SNACK_REPLIES = ["Facts.", "Hard disagree.", "You're not wrong.", "Put that on a plaque.", "Bro is reviewing snacks like it's the Oscars.", "I'm filing this under 'accurate'.", "Who made you the critic?", "I want to subscribe to your newsletter.", "Calm down, it's chips."];
+  const SNACK_REPLIES = ["Facts.", "Hard disagree.", "You're not wrong.", "Put that on a plaque.", "Bro is reviewing snacks like it's the Oscars.", "I'm filing this under 'accurate'.", "Who made you the critic?", "I want to subscribe to your newsletter.", "Calm down, it's chips.", "Noted. By no one. But noted.", "Bold take. Wrong, but bold."];
   const CHAT = {
-    gaming: ["gg", "Lag!!", "One more round", "Camper.", "That was a hit!", "Nice shot.", "Ping is 2ms. Beat that.", "Who has the CD key?", "Host migrated??", "Rematch."],
-    hot: ["It's a sauna in here.", "Who cranked the heat?", "Open a window!", "I'm melting."],
-    cold: ["Is the heat even on?", "Brr. Who opened that window?", "My fingers are numb.", "Hoodie time."],
-    sleepy: ["I'm fine. Resting my eyes.", "Five more minutes...", "Need caffeine."],
-    hungry: ["Is there pizza yet?", "Snack break?", "I could eat."]
+    gaming: ["gg", "Lag!!", "One more round", "Camper.", "That was a hit!", "My aim has left the building.", "Ping is 2ms. Beat that.", "Who has the CD key?", "Host migrated??", "Rematch. Revenge. Regret.", "I was lagging. Obviously.", "Not my fault. Blame physics."],
+    hot: ["It's a sauna in here.", "Who cranked the heat?", "Open a window!", "I'm melting.", "The PCs are winning the heat war."],
+    cold: ["Is the heat even on?", "Brr. Who opened that window?", "My fingers are numb.", "Hoodie time.", "I'm typing with icicles."],
+    sleepy: ["I'm fine. Resting my eyes.", "Five more minutes...", "Need caffeine.", "My eyelids are hosting a LAN party of their own."],
+    hungry: ["Is there pizza yet?", "Snack break?", "I could eat.", "My stomach just lost connection."]
   };
-  const BANTER = ["Dude, try the new map.", "Did you see my killcam?", "Best LAN since 2009.", "Wanna play after this?", "Pass the pretzels.", "I haven't blinked in an hour.", "Nice rig.", "Who's winning? Not me.", "My ping is 1ms. Physics."];
-  const IGNORE = ["has headphones on.", "is mid-match.", "pretends not to hear you.", "just nods slowly at the monitor.", "is in the zone."];
-  const REASONS = ["Gotta work tomorrow.", "My ride's here.", "Dinner at my mom's.", "I have a thing.", "Dog needs out."];
+  const BANTER = ["Dude, try the new map.", "Did you see my killcam?", "Best LAN since 2009.", "Wanna play after this?", "Pass the pretzels.", "I haven't blinked in an hour.", "Nice rig.", "Who's winning? Not me.", "My ping is 1ms. Physics.", "That chair has seen things.", "Keep an eye on my snacks. Which eye? Either."];
+  const IGNORE = ["has headphones on.", "is mid-match.", "pretends not to hear you.", "just nods slowly at the monitor.", "is in the zone. The zone is closed.", "is staring into the screen like it owes money."];
+  const REASONS = ["Gotta work tomorrow. Tragic.", "My ride's here.", "Dinner at my mom's.", "I have a thing.", "Dog needs out.", "My bed misses me."];
   const PROBLEMS = [
     { sym: "The host's game doesn't show up in the server list.", fix: "Turn off the firewall", wrong: ["Reinstall the game", "Turn the monitor around", "Rename the PC to something funnier"] },
     { sym: "Two PCs have the same IP address.", fix: "Set a static IP", wrong: ["Plug the cable in harder", "Restart the router (it's a switch)", "Disable the sound card"] },
@@ -129,10 +126,10 @@
   ];
   const RETRO = ["Mario Kart 64", "GoldenEye 007", "Street Fighter II", "Super Smash Bros.", "Bomberman", "Tetris", "Sonic the Hedgehog 2", "Contra (30 lives)", "Mortal Kombat", "Duck Hunt"];
   const STREAMS = ["a Zelda speedrun marathon", "a 120-star Mario 64 charity stream", "a glitch-hunting marathon", "a blindfolded Dark Souls attempt", "a 24-hour Tetris stream", "a retro RPG relay race"];
-  const RETRO_LINES = ["Blue shell AGAIN?!", "No way you got that!", "Pass me P2!", "Blow on the cartridge.", "I call winner.", "That's a skill issue.", "My thumbs hurt.", "Lag? It's a CRT."];
-  const STREAM_LINES = ["Chat is going crazy.", "World record pace!", "He's gonna choke it.", "Frame perfect!!", "No way. NO WAY.", "Pog.", "Donation goal hit!", "Skip the cutscene!"];
+  const RETRO_LINES = ["Blue shell AGAIN?!", "No way you got that!", "Pass me P2!", "Blow on the cartridge.", "I call winner.", "That's a skill issue.", "My thumbs hurt.", "Lag? It's a CRT.", "The controller cord is 4 feet. Choose your seat.", "That's not a bug, that's 1996."];
+  const STREAM_LINES = ["Chat is going crazy.", "World record pace!", "He's gonna choke it.", "Frame perfect!!", "No way. NO WAY.", "Pog.", "Donation goal hit!", "Skip the cutscene!", "He said 'any percent' like it's easy.", "Chat, he's cooking. Dangerously."];
   const SOLO = ["Baldur's Gate 3", "Stardew Valley", "Skyrim", "Hades", "Disco Elysium", "Elden Ring", "Cyberpunk 2077", "The Witcher 3", "Civilization VI (turn 412)", "a 90-hour JRPG"];
-  const SOLO_ASK = ["WTF are you doing?!", "Is that... single player?", "This is a LAN party!!", "Why are you playing $g?!", "Alt-tab. NOW.", "Who invited you?", "We're all RIGHT HERE.", "You drove here for THIS?", "Bro. Bro. BRO."];
+  const SOLO_ASK = ["WTF are you doing?!", "Is that... single player?", "This is a LAN party!!", "Why are you playing $g?!", "Alt-tab. NOW.", "Who invited you?", "We're all RIGHT HERE.", "You drove here for THIS?", "Bro. Bro. BRO.", "Single player at a LAN. Bold. Lonely."];
   const YELLS = [
     "Oh, c'mon!!", "Son of a b—!", "WHAT THE HECK", "Ah, damn it!", "Bullsh—!", "Piece of s—!", "Are you KIDDING me?!", "F—ing LAG!", "Holy crap!",
     "Who did that?!", "No no no NO!", "Hell yeah!", "Absolute garbage!", "That's BS!", "Get wrecked!", "I hate this game!!", "You son of a—!",
