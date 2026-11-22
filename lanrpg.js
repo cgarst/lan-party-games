@@ -170,12 +170,12 @@
     </div>
     <div class="rpg-pad" role="group" aria-label="Touch controls">
       <div class="rpg-dpad">
-        <button type="button" class="rpg-pb" data-k="ArrowUp" aria-label="Walk up">▲</button>
-        <button type="button" class="rpg-pb" data-k="ArrowLeft" aria-label="Walk left">◀</button>
-        <button type="button" class="rpg-pb" data-k="ArrowRight" aria-label="Walk right">▶</button>
-        <button type="button" class="rpg-pb" data-k="ArrowDown" aria-label="Walk down">▼</button>
+        <button type="button" class="rpg-pb" data-k="ArrowUp" data-g="▲" aria-label="Walk up"></button>
+        <button type="button" class="rpg-pb" data-k="ArrowLeft" data-g="◀" aria-label="Walk left"></button>
+        <button type="button" class="rpg-pb" data-k="ArrowRight" data-g="▶" aria-label="Walk right"></button>
+        <button type="button" class="rpg-pb" data-k="ArrowDown" data-g="▼" aria-label="Walk down"></button>
       </div>
-      <button type="button" class="rpg-pb rpg-pact" aria-label="Interact">E</button>
+      <button type="button" class="rpg-pb rpg-pact" data-g="E" aria-label="Interact"></button>
     </div>
     <div class="rpg-top"><span class="rpg-clock"></span><span class="rpg-temp"></span><span class="rpg-speeds" role="group" aria-label="Game speed"></span><button type="button" class="rpg-sp rpg-fs">Maximize</button></div>
     <p class="rpg-pcline"></p>
@@ -1248,6 +1248,7 @@
     b.addEventListener("pointerdown", (e) => { e.preventDefault(); b.setPointerCapture(e.pointerId); if (!dlgOpen && phase === "play") keys.add(k); });
     b.addEventListener("pointerup", up); b.addEventListener("pointercancel", up); b.addEventListener("lostpointercapture", up);
     b.addEventListener("contextmenu", (e) => e.preventDefault());
+    b.addEventListener("touchstart", (e) => e.preventDefault(), { passive: false }); // no long-press lens / selection on iOS
   });
   root.querySelector(".rpg-pact").addEventListener("click", () => {
     if (dlgOpen || phase !== "play" || sleeping()) return;
