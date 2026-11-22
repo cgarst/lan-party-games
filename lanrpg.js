@@ -1171,7 +1171,7 @@
     if (!expanded()) { canvas.style.width = canvas.style.height = ""; return; }
     canvas.style.width = W + "px"; canvas.style.height = H + "px";
     const scr = canvas.parentElement.getBoundingClientRect(), last = root.lastElementChild.getBoundingClientRect();
-    const chromeW = scr.width - W, chromeH = scr.height - H;
+    const sEl = canvas.parentElement, chromeW = sEl.offsetWidth - sEl.clientWidth, chromeH = sEl.offsetHeight - sEl.clientHeight; // borders only (the screen may be clamped narrower than the canvas)
     const below = Math.max(0, last.bottom - scr.bottom);
     const cs = getComputedStyle(root), padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight), padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
     const fit = Math.min((Math.min(root.clientWidth, 960) - padX - chromeW) / W, (root.clientHeight - padY - chromeH - below) / H);
