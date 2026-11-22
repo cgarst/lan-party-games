@@ -288,8 +288,8 @@
     const names = shuffle(NAMES.filter((n) => !FIXED.includes(n)));
     const mk = (kind, arrive, leave, extra) => ({ name: (extra && extra.name) || names.pop(), kind, arrive, leave, look: makeLook(), fav: pick(TOP).id, hate: pick(TOP).id, ...extra });
     const g = [];
-    for (let i = 0; i < 3; i++) g.push(mk("early", DAY_START - 60, ri(1230, 1290)));
-    g.push(mk("regular", ri(DAY_START + 20, 840), ri(1150, 1260), { name: "Nephron" }));
+    for (let i = 0; i < 2; i++) g.push(mk("early", DAY_START - 60, ri(1230, 1290)));
+    g.push(mk("early", DAY_START - 60, Infinity, { name: "Nephron" })); // lives here: already set up, never leaves
     g.push(mk("regular", ri(DAY_START + 30, 900), ri(1100, 1230)));
     g.push(mk("leaver", ri(DAY_START + 10, 780), ri(840, 1000), { reason: pick(REASONS) }));
     g.push(mk("leaver", ri(DAY_START + 5, DAY_START + 40), ri(DAY_START + 90, DAY_START + 140), { name: "Tyrelie", reason: "Gotta bounce. Always gotta bounce." }));
@@ -1076,7 +1076,7 @@
     const want = !cold; // window open?
     say(P, `NEPHRON! ${cold ? "CLOSE" : "OPEN"} THE WINDOW!`, 4);
     const n = S.npcs.find((x) => x.name === "Nephron" && !x.leaving && !x.gone);
-    if (!n) { log(`You yell for Nephron. Nephron isn't here yet. Or anymore. The window stays as it is.`); P.social = clamp(P.social - 2); return; }
+    if (!n) { log(`You yell for Nephron. Nephron is nowhere to be found. The window stays as it is.`); P.social = clamp(P.social - 2); return; }
     if (S.temp.win === want) { say(n, `It's already ${cold ? "closed" : "open"}!`, 4); log(`Nephron points out the window is already ${cold ? "closed" : "open"}. Try the thermostat.`); return; }
     if (n.hp || chance(0.3)) {
       say(n, n.hp ? "...what?" : "No, it's fine.", 4); S.stats.ignored++; P.social = clamp(P.social - 4);
