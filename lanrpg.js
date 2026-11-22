@@ -111,6 +111,20 @@
   };
   const BANTER = ["Dude, try the new map.", "Did you see my killcam?", "Best LAN since 2009.", "Wanna play after this?", "Pass the pretzels.", "I haven't blinked in an hour.", "Nice rig.", "Who's winning? Not me.", "My ping is 1ms. Physics.", "That chair has seen things.", "Keep an eye on my snacks. Which eye? Either."];
   const IGNORE = ["has headphones on.", "is mid-match.", "pretends not to hear you.", "just nods slowly at the monitor.", "is in the zone. The zone is closed.", "is staring into the screen like it owes money."];
+  // per-person voices: chat = ambient lines while gaming, talk = reply when you chat them up, leave = exit line, quiet = chance to skip ambient chatter
+  const PERSONA = {
+    Nephron: { chat: ["Anyone need a hand? Pull up a chair.", "The NAS is humming along nicely.", "Fear not, there's always a bonfire.", "I got Link's Awakening running on a handheld.", "Try again. Maybe with a bigger sword.", "Just one more Souls boss.", "Backups are running. Don't worry about it."], talk: ["Welcome! Grab a seat, grab a snack.", "Did you see the NAS? It's behaving today.", "Have you tried a FromSoft game? Don't answer that, just try one.", "Want to play something retro? I have a shelf of cartridges.", "Glad you made it, truly."] },
+    Tyrelie: { chat: ["Man, I could be fishing right now.", "Thinking about the lake...", "Four hours back to Pennsylvania. Don't remind me.", "I'm getting sleepy already.", "Bass are biting this time of year.", "Remind me to leave early."], talk: ["I should really get on the road soon.", "Thinking about fishing this weekend.", "Pennsylvania is four hours away. Four!", "Is there coffee? I'm fading."], leave: "It's four hours to Pennsylvania. Gotta bounce. Fish are waiting." },
+    CainDeMoore: { chat: ["...", "You didn't see me.", "Interesting.", "I know a guy.", "Not today."], talk: ["...", "Who's asking?", "Some say I was here last year. Some say I wasn't.", "Hm.", "I'll let you know."], arrive: ["...", "Don't mind me.", "Nobody saw anything."], leave: "I was never here." },
+    Zathu: { chat: ["Just one more config tweak.", "Why is the tick rate off?", "It's in the .cfg. It's always in the .cfg.", "Let me fix my autoexec real quick.", "Raw input is a lie.", "Did somebody touch my mouse DPI?", "Wait, that cvar isn't saved."], talk: ["Want to see my config? It's 400 lines.", "Check your rates, trust me.", "Mouse acceleration is off. Obviously.", "I'll be done tweaking in a minute."] },
+    Lanarchy: { chat: ["This game sucks. Again.", "Everything is garbage, and I love it.", "Who the hell designed this map?", "Shit lag. Shit server. Shit everything.", "Fuck this patch.", "...You need a drink? I'll grab you one. Don't make it weird."], talk: ["Ugh, what do you want? ...Kidding. Sit. You eat yet?", "Everything is awful. Are YOU okay though?", "This LAN is trash. Best part of my month, honestly.", "Shut up and have some pizza. I saved you a slice."] },
+    Blacktwin: { chat: ["Ha ha ha! My kid did the funniest thing.", "Plex transcoded that in no time.", "My kids would love this game. HA!", "You ever set up a Plex library right? Beautiful.", "Hahaha, no, listen, so my youngest...", "Just added a hundred movies to Plex. Ha!"], talk: ["Hahaha! Have you seen my Plex server?", "My kids won't believe I'm here, ha!", "Ha! Wait, let me show you a picture of the kids.", "You should get on Plex. Seriously. HA!"] },
+    Meatpipe: { chat: ["Don't breathe in.", "That wasn't me.", "Sorry. Occupational hazard.", "Pizza's gonna haunt me.", "Open a window, please."], talk: ["Stand a little to the left. Trust me.", "Sorry in advance.", "That wasn't me. It was the chair."] },
+    Wham: { chat: ["What if we sold tickets to this?", "Buying these snacks in bulk would save us a fortune.", "I've got a side hustle for you.", "Need a cut? I take 10%.", "We should charge for the Wi-Fi.", "Hear me out: LAN tournament, entry fee.", "That's resellable."], talk: ["Got a minute? I've got a business proposal.", "Everything's for sale. Everything.", "Invest with me. Don't ask what in.", "I'd flip that PC for a profit."] },
+    Yung: { chat: ["I have to be at work soon.", "Is it that late already? Work.", "Can't stay long. Work tomorrow.", "My boss texted me again.", "I'm on shift in an hour. Don't ask."], talk: ["Sorry, I've got to go to work soon.", "Work, work, work...", "I should leave for work, but one more round."], leave: "I have to go to work. Later!" },
+    Maxim: { quiet: 0.75, chat: ["...", "sudo make me a sandwich.", "I use Arch.", "The kernel knows.", "Everything is a file.", "All is process."], talk: ["...", "Mm.", "You will find what you seek in /etc.", "Silence is also a config.", "The answer is in the logs."] }
+  };
+  const voice = (n, kind, fallback) => { const v = PERSONA[n.name] && PERSONA[n.name][kind]; return v && chance(0.7) ? pick(v) : fallback; };
   const REASONS = ["Gotta work tomorrow. Tragic.", "My ride's here.", "Dinner at my mom's.", "I have a thing.", "Dog needs out.", "My bed misses me."];
   const PROBLEMS = [
     { sym: "The host's game doesn't show up in the server list.", fix: "Turn off the firewall", wrong: ["Reinstall the game", "Turn the monitor around", "Rename the PC to something funnier"] },
@@ -292,7 +306,7 @@
     g.push(mk("early", DAY_START - 60, Infinity, { name: "Nephron" })); // lives here: already set up, never leaves
     g.push(mk("regular", ri(DAY_START + 30, 900), ri(1100, 1230)));
     g.push(mk("leaver", ri(DAY_START + 10, 780), ri(840, 1000), { reason: pick(REASONS) }));
-    g.push(mk("leaver", ri(DAY_START + 5, DAY_START + 40), ri(DAY_START + 90, DAY_START + 140), { name: "Tyrelie", reason: "Gotta bounce. Always gotta bounce." }));
+    g.push(mk("leaver", ri(DAY_START + 5, DAY_START + 40), ri(DAY_START + 90, DAY_START + 140), { name: "Tyrelie", reason: PERSONA.Tyrelie.leave }));
     g.push(mk("late", ri(960, 1080), ri(1200, 1290)));
     const cd = ri(1110, 1200); g.push(mk("dropin", cd, cd + 10, { name: "CainDeMoore" }));
     for (let i = 0; i < 2; i++) { const t = ri(DAY_START + 15, 1230); g.push(mk("dropin", t, t + 10)); }
@@ -380,11 +394,18 @@
       else { goSeat(n); if (g.kind === "late") log(`${n.name} rolls in late with a laptop bag.`); else if (g.kind !== "early") log(`${n.name} arrives.`); }
     } else if (g.kind === "dropin") {
       log(`${n.name} is just stopping by.`);
-      chatter(n, pick(["Just stopping by!", "Can't stay long.", "Hi, bye."]));
+      chatter(n, voice(n, "arrive", pick(["Just stopping by!", "Can't stay long.", "Hi, bye."])));
       errand(n, OBJS.snacks, snackEat, 3);
       n._dropin = true;
     } else { n.act = "idle"; startPath(n, [randTile(2, 11, 15, 14)]); }
     return n;
+  }
+  function fart(n) {
+    say(n, pick(["...", "Excuse me.", "That wasn't me.", "Huh. Weird."]), 3);
+    log(`${n.name} lets one rip. The air changes.`);
+    const near = Math.hypot(P.x - n.x, P.y - n.y) < 70;
+    if (near) { P.fun = clamp(P.fun - 4); P.social = clamp(P.social - 2); say(P, "MEATPIPE!", 3); log("It reaches you. You taste it."); }
+    for (const m of S.npcs) if (m !== n && !m.gone && Math.hypot(m.x - n.x, m.y - n.y) < 70 && chance(0.6)) { chatter(m, pick(["Seriously?!", "Dude. DUDE.", "Open a window!", "Who died?"]), 3); break; }
   }
   function startLeaving(n) {
     n.leaving = true; n.after = null; n.wait = 0; n.then = null;
@@ -392,7 +413,8 @@
     if (n.seat) { n.seat.occ = null; n.seat = null; }
     if (n.st) { n.st.occ = null; n.st.pc = null; n.st = null; }
     const k = n.g.kind;
-    if (k === "leaver") { say(n, n.g.reason); log(`${n.name} leaves early. "${n.g.reason}"`); }
+    if (PERSONA[n.name] && PERSONA[n.name].leave) { say(n, PERSONA[n.name].leave); log(`${n.name} leaves. "${PERSONA[n.name].leave}"`); }
+    else if (k === "leaver") { say(n, n.g.reason); log(`${n.name} leaves early. "${n.g.reason}"`); }
     else if (k === "dropin") { say(n, pick(["Okay, bye!", "Gotta run."])); log(`${n.name} leaves after ten minutes.`); }
     else if (k === "early" || k === "late") { say(n, "gg, I'm out."); log(`${n.name} finally heads home.`); }
     else { say(n, pick(["Later!", "See ya."])); log(`${n.name} heads out.`); }
@@ -619,7 +641,8 @@
       if (chance(0.012)) { errand(n, OBJS.snacks, snackEat, 3); return; }
       if (chance(0.004)) { errand(n, { stand: [randTile(2, 11, 15, 14)] }, () => say(n, "brb"), 4); return; }
       if (S.clock >= 1140 && chance(0.006)) { n.act = "sleepdesk"; n.wait = ri(40, 80); say(n, "zzz", 6); return; }
-      if (chance(0.03)) { const k = S.clock >= 1140 && chance(0.4) ? "sleepy" : pz.slices === 0 && chance(0.3) ? "hungry" : "gaming"; chatter(n, chance(0.05) ? pick(MEM_LINES) : pick(CHAT[k])); return; }
+      if (chance(0.03) && !(PERSONA[n.name] && chance(PERSONA[n.name].quiet || 0))) { const k = S.clock >= 1140 && chance(0.4) ? "sleepy" : pz.slices === 0 && chance(0.3) ? "hungry" : "gaming"; chatter(n, chance(0.05) ? pick(MEM_LINES) : voice(n, "chat", pick(CHAT[k]))); return; }
+      if (n.name === "Meatpipe" && chance(0.008)) { fart(n); return; }
       if (chance(0.01)) n.hp = !n.hp;
     } else if (n.act === "idle") {
       if (n._dropin) { // greet, linger, leave on schedule
@@ -1121,7 +1144,7 @@
     if (n.st && n.st.pc && n.st.pc.problem) { openFixDialog(n.st, P, `${n.name} spots you: "Can you look at this?"`); return; }
     const busy = n.hp || (n.act === "sit" && chance(0.5)) || (P.social < 30 && chance(0.4));
     if (busy) { S.stats.ignored++; P.social = clamp(P.social - 3); say(n, "...", 2); log(`${n.name} ${pick(IGNORE)} You are invisible.`); }
-    else { P.social = clamp(P.social + 12); P.fun = clamp(P.fun + 3); const l = pick(BANTER); say(n, l, 4); log(`${n.name}: "${l}"`); }
+    else { P.social = clamp(P.social + 12); P.fun = clamp(P.fun + 3); const l = voice(n, "talk", pick(BANTER)); say(n, l, 4); log(`${n.name}: "${l}"`); }
   }
 
   // ---------- targets ----------
