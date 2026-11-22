@@ -79,6 +79,8 @@ code { font: 500 0.9em ui-monospace, "Cascadia Mono", Consolas, monospace; backg
 .rpg-cell.open { background: #efe2c2; border: 1px solid #c9b98f; cursor: default; }
 .rpg-cell.bomb { background: #e8a79d; color: #2b1d12 !important; }
 .rpg-key {font: 400 0.625rem/1 "Press Start 2P", monospace; opacity: 0.6; flex: none; }
+.rpg button, .rpg-canvas { -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+.rpg-pb:focus, .rpg-pb:focus-visible { outline: none; }
 .rpg-pad { display: none; justify-content: space-between; align-items: center; margin-top: 12px; user-select: none; -webkit-user-select: none; }
 .rpg-dpad { display: grid; grid-template-columns: repeat(3, 56px); grid-template-rows: repeat(2, 56px); gap: 6px; grid-template-areas: ". up ." "left down right"; }
 .rpg-pb { font: 400 1rem/1 "Press Start 2P", monospace; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); touch-action: none; -webkit-touch-callout: none; cursor: pointer; }
