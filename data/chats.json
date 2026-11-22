@@ -1,0 +1,477 @@
+{
+  "order": [
+    "Zathu",
+    "Nephron",
+    "Lanarchy",
+    "Blacktwin",
+    "Meatpipe",
+    "Wham",
+    "Yung",
+    "CainDeMoore",
+    "Maxim",
+    "Trees",
+    "bortio",
+    "Joe",
+    "Tyrelie",
+    "vrt"
+  ],
+  "chats": {
+    "Zathu|Nephron": [
+      "Nephron, is the NAS exposing my config folder?",
+      "Backed up nightly. Your 400-line autoexec is safe with me.",
+      "Great. Don't let anyone 'clean it up'."
+    ],
+    "Zathu|Lanarchy": [
+      "My rates are finally perfect.",
+      "Perfect, my ass. You say that every LAN.",
+      "...Fine. Send me the config. I'll try it."
+    ],
+    "Zathu|Blacktwin": [
+      "Blacktwin, is Plex bitrate capped on the LAN?",
+      "Ha ha! No idea, but my kids love it!",
+      "Cool. I'll check the transcoder settings anyway."
+    ],
+    "Zathu|Meatpipe": [
+      "Meatpipe, did you touch my cvars?",
+      "Only the ones I could reach. Sorry about the other thing.",
+      "What other thing?",
+      "...Don't breathe."
+    ],
+    "Zathu|Wham": [
+      "I'd sell you my config for twenty bucks.",
+      "Make it ten and I'll resell it for thirty.",
+      "That's not how that works."
+    ],
+    "Zathu|Yung": [
+      "Yung, one more tweak and I'm done.",
+      "Cool. I have to leave for work in an hour.",
+      "Then I'll tweak fast."
+    ],
+    "Zathu|CainDeMoore": [
+      "Cain, what sensitivity do you run?",
+      "Enough.",
+      "That's not a number."
+    ],
+    "Zathu|Maxim": [
+      "Maxim, what's the kernel parameter for lower input lag?",
+      "...",
+      "That's it? Just the dots?",
+      "Read the man page."
+    ],
+    "Zathu|Trees": [
+      "Trees, your mouse acceleration is on.",
+      "Is that bad?",
+      "I'll fix it for you. Hold still."
+    ],
+    "Zathu|bortio": [
+      "bortio, what's your FOV?",
+      "Whatever it was by default.",
+      "Oh no. Give me that keyboard."
+    ],
+    "Zathu|Joe": [
+      "Joe, do you ever edit your config files?",
+      "I just click Play.",
+      "A tragic way to live."
+    ],
+    "Zathu|Tyrelie": [
+      "Tyrelie, want me to tune your settings?",
+      "I'm too sleepy, man.",
+      "That's the best time. Fewer opinions."
+    ],
+    "Zathu|vrt": [
+      "vrt, did you update your drivers?",
+      "Yeah, last week.",
+      "Cool. Now let me see your autoexec."
+    ],
+    "Nephron|Lanarchy": [
+      "Lanarchy, glad you came. Grab a drink?",
+      "This LAN is trash. ...Yeah, I'll take a Pepsi.",
+      "Ha, welcome home."
+    ],
+    "Nephron|Blacktwin": [
+      "Blacktwin, how's your Plex library?",
+      "Ha ha! Huge! My kids even added their own folders!",
+      "Mind if I back it up to the NAS?"
+    ],
+    "Nephron|Meatpipe": [
+      "Meatpipe, good to see you! Take the seat by the window.",
+      "Thanks. It's for everyone's benefit.",
+      "I appreciate the honesty."
+    ],
+    "Nephron|Wham": [
+      "Wham, I hear you're selling stuff again.",
+      "Only to friends. At a markup.",
+      "That's... fair? Welcome anyway."
+    ],
+    "Nephron|Yung": [
+      "Yung, are you here long?",
+      "Gotta go to work soon.",
+      "Then let's get you a game in first. Sit."
+    ],
+    "Nephron|CainDeMoore": [
+      "Cain! Good to see you. Where've you been?",
+      "Around.",
+      "That's all I get? Sit down, enigma."
+    ],
+    "Nephron|Maxim": [
+      "Maxim, you still running Arch?",
+      "Yes.",
+      "Good. I have a NAS question later."
+    ],
+    "Nephron|Trees": [
+      "Trees, welcome. Have you tried Elden Ring?",
+      "Not yet.",
+      "Oh, you're in for a time. Fear not, I'll help."
+    ],
+    "Nephron|bortio": [
+      "bortio, want to try something retro?",
+      "Sure. What do you have?",
+      "A shelf of cartridges. Come look."
+    ],
+    "Nephron|Joe": [
+      "Joe, what are you playing?",
+      "Just warming up.",
+      "Nice. Let me know if you want a retro game next."
+    ],
+    "Nephron|Tyrelie": [
+      "Tyrelie, you look beat.",
+      "Four hours home to Pennsylvania. Long drive.",
+      "Take the couch. Seriously, nap."
+    ],
+    "Nephron|vrt": [
+      "vrt, grab a seat anywhere!",
+      "Thanks, Nephron.",
+      "If anyone gives you trouble, send them to me."
+    ],
+    "Lanarchy|Blacktwin": [
+      "Blacktwin, another kid story? Goddamn it.",
+      "Ha ha ha! My youngest bit a pizza!",
+      "...Okay, that's actually funny."
+    ],
+    "Lanarchy|Meatpipe": [
+      "Meatpipe, I swear to God.",
+      "It wasn't me.",
+      "Shit, it's always you. Open a window."
+    ],
+    "Lanarchy|Wham": [
+      "Wham, scheming again?",
+      "Only a little. Want in on the profit?",
+      "Hell no. ...What's the cut?"
+    ],
+    "Lanarchy|Yung": [
+      "Yung, you're leaving? Typical.",
+      "I have work in the morning.",
+      "Fine. Drive safe, dumbass. Text me when you get home."
+    ],
+    "Lanarchy|CainDeMoore": [
+      "Cain, who the hell are you, really?",
+      "Nobody.",
+      "Great. Eat something, enigma."
+    ],
+    "Lanarchy|Maxim": [
+      "Maxim, say something for once.",
+      "...",
+      "Exactly what I figured. Thanks for the company."
+    ],
+    "Lanarchy|Trees": [
+      "Trees, this map is garbage.",
+      "I kind of like it.",
+      "Ugh. Fine. Me too. Don't tell anyone."
+    ],
+    "Lanarchy|bortio": [
+      "bortio, you're ahead of me. Shit.",
+      "Want to switch seats?",
+      "Nah. Keep it. I hate winning anyway."
+    ],
+    "Lanarchy|Joe": [
+      "Joe, your aim is dogshit.",
+      "Yeah, I know.",
+      "Come here. Let me show you a trick."
+    ],
+    "Lanarchy|Tyrelie": [
+      "Tyrelie, you look like crap.",
+      "Sleepy. Long drive later.",
+      "Damn it. Drink some coffee. I'll get it."
+    ],
+    "Lanarchy|vrt": [
+      "vrt, quit camping, you bastard.",
+      "Ha, it's a strategy.",
+      "It's a shitty strategy. A good one, though."
+    ],
+    "Blacktwin|Meatpipe": [
+      "Ha ha! Meatpipe, did something die in here?",
+      "Pizza and regret.",
+      "My kids do the same! Ha ha!"
+    ],
+    "Blacktwin|Wham": [
+      "Wham, ha ha, any good deals lately?",
+      "Plex lifetime keys. Cheap.",
+      "I already have one! Ha! Check my library!"
+    ],
+    "Blacktwin|Yung": [
+      "Yung! Ha! Have you seen my kids' latest video on Plex?",
+      "I have to go to work soon.",
+      "Next time then! Ha ha!"
+    ],
+    "Blacktwin|CainDeMoore": [
+      "Ha ha! Cain, do you have kids?",
+      "...",
+      "Ha! Mysterious! My kids would love you."
+    ],
+    "Blacktwin|Maxim": [
+      "Maxim, is Plex on Linux?",
+      "Yes.",
+      "Ha! Of course it is! That's my guy."
+    ],
+    "Blacktwin|Trees": [
+      "Trees, ha ha, do you have kids?",
+      "Not yet.",
+      "Ha! Wait till you do. It's chaos! I love it."
+    ],
+    "Blacktwin|bortio": [
+      "bortio, ha! Watched anything good lately?",
+      "A couple of things.",
+      "Put it on Plex! Ha ha ha!"
+    ],
+    "Blacktwin|Joe": [
+      "Joe! My kid beat me at Mario Kart. Ha!",
+      "Kids are brutal.",
+      "Ha ha ha! The best kind of brutal."
+    ],
+    "Blacktwin|Tyrelie": [
+      "Tyrelie, ha, you fishing again?",
+      "Whenever I can.",
+      "My kids love fishing. Ha! Take them next time."
+    ],
+    "Blacktwin|vrt": [
+      "vrt, ha ha! Have a slice?",
+      "Thanks.",
+      "Ha ha! My kids would have eaten the box!"
+    ],
+    "Meatpipe|Wham": [
+      "Wham, are you buying more beans?",
+      "Bulk discount. Profit margins.",
+      "I'm sorry in advance."
+    ],
+    "Meatpipe|Yung": [
+      "Yung, sorry about that.",
+      "Meatpipe, I have to leave for work. Thank God.",
+      "Sorry again."
+    ],
+    "Meatpipe|CainDeMoore": [
+      "Cain, you didn't hear that.",
+      "I hear everything.",
+      "...Of course you do."
+    ],
+    "Meatpipe|Maxim": [
+      "Maxim, did you smell that?",
+      "...",
+      "Silent but deadly. Like you."
+    ],
+    "Meatpipe|Trees": [
+      "Trees, don't turn around.",
+      "Why?",
+      "Just trust me. Sorry."
+    ],
+    "Meatpipe|bortio": [
+      "bortio, that wasn't me.",
+      "It was totally you.",
+      "Yeah, it was me."
+    ],
+    "Meatpipe|Joe": [
+      "Joe, I think the chair did that.",
+      "The chair?",
+      "Yeah. Blame the chair."
+    ],
+    "Meatpipe|Tyrelie": [
+      "Tyrelie, you asleep?",
+      "Almost. Why?",
+      "Oh, no reason. Pretend you didn't smell that."
+    ],
+    "Meatpipe|vrt": [
+      "vrt, I'm so sorry.",
+      "For what?",
+      "Don't inhale."
+    ],
+    "Wham|Yung": [
+      "Yung, I'll cover your shift for a small fee.",
+      "That's illegal, I think.",
+      "That's a no on the profit, then."
+    ],
+    "Wham|CainDeMoore": [
+      "Cain, what do you do for a living?",
+      "...",
+      "Cagey. Intriguing. Can I invest in that?"
+    ],
+    "Wham|Maxim": [
+      "Maxim, how much for your Linux ISOs?",
+      "They're free.",
+      "Free?! Then how do I make a profit?"
+    ],
+    "Wham|Trees": [
+      "Trees, want to buy a mystery box?",
+      "What's in it?",
+      "That's the mystery. Ten bucks."
+    ],
+    "Wham|bortio": [
+      "bortio, I have a business idea.",
+      "Is this another scheme?",
+      "No. Okay, yes. Hear me out."
+    ],
+    "Wham|Joe": [
+      "Joe, can I sell your old controller?",
+      "Please don't.",
+      "Fifteen percent commission. Final offer."
+    ],
+    "Wham|Tyrelie": [
+      "Tyrelie, I'll buy your fishing rod.",
+      "Not for sale.",
+      "Everyone says that until I offer double."
+    ],
+    "Wham|vrt": [
+      "vrt, those headphones are worth money.",
+      "They're not for sale.",
+      "Everything's for sale, vrt. Everything."
+    ],
+    "Yung|CainDeMoore": [
+      "Cain, do you have a job?",
+      "...",
+      "Thought so. I'll be late for mine."
+    ],
+    "Yung|Maxim": [
+      "Maxim, my work laptop runs Windows.",
+      "I'm sorry.",
+      "I know. I have to get back to it soon."
+    ],
+    "Yung|Trees": [
+      "Trees, what time is it?",
+      "Half past too late.",
+      "Great. I'm gonna miss work. One more round."
+    ],
+    "Yung|bortio": [
+      "bortio, one more match before I go?",
+      "Sure. When's your shift?",
+      "Soon. Very soon."
+    ],
+    "Yung|Joe": [
+      "Joe, I have to leave for work soon.",
+      "Already?",
+      "Yeah. Good game though."
+    ],
+    "Yung|Tyrelie": [
+      "Tyrelie, how long is your drive home?",
+      "Four hours.",
+      "And I'm complaining about work. Respect."
+    ],
+    "Yung|vrt": [
+      "vrt, can you cover for me if my boss calls?",
+      "What do I say?",
+      "That I'm in a meeting. Playing Quake."
+    ],
+    "CainDeMoore|Maxim": [
+      "...",
+      "...",
+      "We understand each other."
+    ],
+    "CainDeMoore|Trees": [
+      "Trees. You didn't see me here.",
+      "I didn't see anything.",
+      "Good."
+    ],
+    "CainDeMoore|bortio": [
+      "bortio, do you know what time it is?",
+      "About three.",
+      "It's later than you think."
+    ],
+    "CainDeMoore|Joe": [
+      "Joe, I know who you are.",
+      "Uh, we've met?",
+      "Have we?"
+    ],
+    "CainDeMoore|Tyrelie": [
+      "Tyrelie, the fish aren't biting today.",
+      "How do you know?",
+      "I know."
+    ],
+    "CainDeMoore|vrt": [
+      "vrt, you're being watched.",
+      "By who?",
+      "...Kidding. Probably."
+    ],
+    "Maxim|Trees": [
+      "...",
+      "Everything okay, Maxim?",
+      "Yes."
+    ],
+    "Maxim|bortio": [
+      "bortio, your system is outdated.",
+      "What? How do you know?",
+      "I just do."
+    ],
+    "Maxim|Joe": [
+      "Joe, sudo apt update.",
+      "What?",
+      "...Never mind. You'll understand later."
+    ],
+    "Maxim|Tyrelie": [
+      "Tyrelie, sleep is a process.",
+      "Sure, man, sure.",
+      "..."
+    ],
+    "Maxim|vrt": [
+      "vrt, have you tried Linux?",
+      "Not yet.",
+      "You will."
+    ],
+    "Trees|bortio": [
+      "bortio, you're good at this.",
+      "I'm just lucky.",
+      "Nah. Teach me your ways."
+    ],
+    "Trees|Joe": [
+      "Joe, want to team up next round?",
+      "Yeah!",
+      "Just don't leave me for dead."
+    ],
+    "Trees|Tyrelie": [
+      "Tyrelie, you look tired.",
+      "Always.",
+      "Same. Pizza?"
+    ],
+    "Trees|vrt": [
+      "vrt, nice shot.",
+      "Thanks, Trees.",
+      "Seriously, how?"
+    ],
+    "bortio|Joe": [
+      "Joe, do you have the CD key?",
+      "Check the bottom of the case.",
+      "That's where I left it. Thanks."
+    ],
+    "bortio|Tyrelie": [
+      "Tyrelie, catch anything lately?",
+      "A cold, mostly.",
+      "Ha. Classic."
+    ],
+    "bortio|vrt": [
+      "vrt, rematch?",
+      "Always.",
+      "Loser buys snacks."
+    ],
+    "Joe|Tyrelie": [
+      "Tyrelie, you're dozing off.",
+      "Resting my eyes.",
+      "They look closed from here."
+    ],
+    "Joe|vrt": [
+      "vrt, did you see that?",
+      "See what?",
+      "Never mind. It was great."
+    ],
+    "Tyrelie|vrt": [
+      "vrt, wake me in ten minutes.",
+      "Sure. Then you drive to Pennsylvania?",
+      "Don't remind me."
+    ]
+  }
+}

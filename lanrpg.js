@@ -152,6 +152,9 @@
   const Y_ADJ = ["absolute", "unholy", "soggy", "feral", "cursed", "majestic", "greasy"];
   const Y_NOUN = ["spoon", "walnut", "goblin", "waffle", "mongoose", "sock", "lasagna", "trombone"];
   const yellLine = () => (chance(0.3) ? `You ${pick(Y_ADJ)} ${pick(Y_NOUN)}!` : pick(YELLS));
+  // short two-person exchanges for every pair of regulars, from data/chats.json ({ order, chats: { "A|B": [A line, B line, ...] } })
+  let CONVOS = null;
+  fetch("data/chats.json").then((r) => r.json()).then((d) => { if (d && d.chats) CONVOS = d; }).catch(() => {});
   let GAMENAMES =["Quake III Arena", "Halo: Combat Evolved", "Counter-Strike 1.6", "Age of Empires II", "Unreal Tournament 2004", "Left 4 Dead 2"];
   fetch("data/games.json").then((r) => r.json()).then((d) => { if (d.games && d.games.length) GAMENAMES = d.games.map((g) => g.name); }).catch(() => {});
 
@@ -400,6 +403,29 @@
     } else { n.act = "idle"; startPath(n, [randTile(2, 11, 15, 14)]); }
     return n;
   }
+  // two guests who are both around occasionally strike up a scripted chat, one line every few seconds; each pair holds a line set, and a pair is not repeated until all others have been heard
+  function convoTick() {
+    if (!CONVOS || !chance(0.025)) return;
+    const now = performance.now();
+    if ([...S.npcs, P].some((q) => q.bubble && q.bubble.until > now)) return;
+    const ord = CONVOS.order, pool = S.npcs.filter((n) => !n.gone && !n.leaving && !n.delivery && ord.includes(n.name) && (n.act === "sit" || n.act === "idle") && !(n.path && n.path.length));
+    if (pool.length < 2) return;
+    const heard = S.convoHeard || (S.convoHeard = new Set());
+    const pairs = [];
+    for (let i = 0; i < pool.length; i++) for (let j = i + 1; j < pool.length; j++) {
+      const [a, b] = ord.indexOf(pool[i].name) < ord.indexOf(pool[j].name) ? [pool[i], pool[j]] : [pool[j], pool[i]];
+      const key = a.name + "|" + b.name;
+      if (CONVOS.chats[key] && !heard.has(key)) pairs.push([a, b, key]);
+    }
+    if (!pairs.length) { heard.clear(); return; }
+    const [a, b, key] = pick(pairs); heard.add(key);
+    const day = S;
+    CONVOS.chats[key].forEach((text, i) => setTimeout(() => {
+      const who = i % 2 ? b : a;
+      if (S !== day || phase !== "play" || a.gone || b.gone || a.leaving || b.leaving) return;
+      say(who, text, 3.2); log(`${who.name}: "${text}"`);
+    }, i * 3300));
+  }
   function fart(n) {
     say(n, pick(["...", "Excuse me.", "That wasn't me.", "Huh. Weird."]), 3);
     log(`${n.name} lets one rip. The air changes.`);
@@ -556,6 +582,7 @@
       log(T0.kick > 0 ? "The radiator clanks and goes full blast." : "The AC kicks on hard. Arctic.");
     }
     const rs = roomState();
+    convoTick();
     if (rs !== "ok") for (const n of seatedNpcs()) if (chance(0.01)) { chatter(n, pick(CHAT[rs])); break; }
     if (chance(0.003)) {
       const n = pick(presentNpcs().filter((x) => x.act === "sit") || []);
