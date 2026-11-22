@@ -274,6 +274,15 @@
     el.log.replaceChildren(...S.log.slice(0, 5).map((t) => { const li = document.createElement("li"); li.textContent = t; return li; }));
   }
   function say(p, text, secs = 3.5) { p.bubble = { text, until: performance.now() + secs * 1000 }; }
+  // Ambient banter only speaks when the room is quiet: at most one other bubble up, and a short global gap.
+  let lastChatter = 0;
+  function chatter(p, text, secs = 3.5) {
+    const now = performance.now();
+    if (now - lastChatter < 4000) return;
+    const live = [...S.npcs, P].filter((q) => q.bubble && q.bubble.until > now).length;
+    if (live >= 1) return;
+    lastChatter = now; say(p, text, secs);
+  }
 
   function makeGuests() {
     const names = shuffle(NAMES.filter((n) => !FIXED.includes(n)));
@@ -371,7 +380,7 @@
       else { goSeat(n); if (g.kind === "late") log(`${n.name} rolls in late with a laptop bag.`); else if (g.kind !== "early") log(`${n.name} arrives.`); }
     } else if (g.kind === "dropin") {
       log(`${n.name} is just stopping by.`);
-      say(n, pick(["Just stopping by!", "Can't stay long.", "Hi, bye."]));
+      chatter(n, pick(["Just stopping by!", "Can't stay long.", "Hi, bye."]));
       errand(n, OBJS.snacks, snackEat, 3);
       n._dropin = true;
     } else { n.act = "idle"; startPath(n, [randTile(2, 11, 15, 14)]); }
@@ -525,7 +534,7 @@
       log(T0.kick > 0 ? "The radiator clanks and goes full blast." : "The AC kicks on hard. Arctic.");
     }
     const rs = roomState();
-    if (rs !== "ok") for (const n of seatedNpcs()) if (chance(0.01)) { say(n, pick(CHAT[rs])); break; }
+    if (rs !== "ok") for (const n of seatedNpcs()) if (chance(0.01)) { chatter(n, pick(CHAT[rs])); break; }
     if (chance(0.003)) {
       const n = pick(presentNpcs().filter((x) => x.act === "sit") || []);
       if (n) errand(n, OBJS.thermo, () => { T0.set = clamp(T0.set + pick([-1, 1]), -2, 2); say(n, "Fixed it."); log(`${n.name} touched the thermostat. It's now "${SET_NAMES[T0.set + 2]}".`); });
@@ -549,7 +558,7 @@
     if (!seat) return false;
     seat.occ = n; n.seat = seat; n.tvCool = 40;
     standUp(n);
-    const ok = startPath(n, [seat.t], () => { n.act = "tv"; n.dir = "d"; n.wait = ri(8, 25); say(n, pick(S.tv.mode === "retro" ? RETRO_LINES : STREAM_LINES), 3); }, { x: seat.x, y: seat.y });
+    const ok = startPath(n, [seat.t], () => { n.act = "tv"; n.dir = "d"; n.wait = ri(8, 25); chatter(n, pick(S.tv.mode === "retro" ? RETRO_LINES : STREAM_LINES), 3); }, { x: seat.x, y: seat.y });
     if (!ok) { seat.occ = null; n.seat = null; back(n); return false; }
     return true;
   }
@@ -594,7 +603,7 @@
     if (n.tvCool > 0) n.tvCool--;
     if (n.act === "tv") {
       if (--n.wait <= 0) { standUp(n); back(n); say(n, pick(["Back to my PC.", "Your turn.", "Okay, bathroom time."])); }
-      else if (chance(0.1)) say(n, pick(S.tv.mode === "retro" ? RETRO_LINES : STREAM_LINES), 3);
+      else if (chance(0.1)) chatter(n, pick(S.tv.mode === "retro" ? RETRO_LINES : STREAM_LINES), 3);
       return;
     }
     if (n.act === "sleepdesk") { if (--n.wait <= 0) { n.act = "sit"; say(n, "I'm awake!"); } return; }
@@ -610,7 +619,7 @@
       if (chance(0.012)) { errand(n, OBJS.snacks, snackEat, 3); return; }
       if (chance(0.004)) { errand(n, { stand: [randTile(2, 11, 15, 14)] }, () => say(n, "brb"), 4); return; }
       if (S.clock >= 1140 && chance(0.006)) { n.act = "sleepdesk"; n.wait = ri(40, 80); say(n, "zzz", 6); return; }
-      if (chance(0.03)) { const k = S.clock >= 1140 && chance(0.4) ? "sleepy" : pz.slices === 0 && chance(0.3) ? "hungry" : "gaming"; say(n, chance(0.05) ? pick(MEM_LINES) : pick(CHAT[k])); return; }
+      if (chance(0.03)) { const k = S.clock >= 1140 && chance(0.4) ? "sleepy" : pz.slices === 0 && chance(0.3) ? "hungry" : "gaming"; chatter(n, chance(0.05) ? pick(MEM_LINES) : pick(CHAT[k])); return; }
       if (chance(0.01)) n.hp = !n.hp;
     } else if (n.act === "idle") {
       if (n._dropin) { // greet, linger, leave on schedule
@@ -630,7 +639,7 @@
     else if (P.act === "tv") {
       const others = S.npcs.filter((n) => n.act === "tv").length;
       dF = 0.5 + (S.tv.mode === "retro" ? 0.2 : 0) + Math.min(0.3, others * 0.1); dE = -0.12; dS = others ? 0.2 : -0.03;
-      if (chance(0.06)) say(P, pick(S.tv.mode === "retro" ? RETRO_LINES : STREAM_LINES), 3);
+      if (chance(0.06)) chatter(P, pick(S.tv.mode === "retro" ? RETRO_LINES : STREAM_LINES), 3);
     }
     else if (seated && pc.playing && !pc.problem && !pc.upd) { dF += 0.55 + Math.min(0.25, seatedNpcs().length * 0.03); dE -= 0.03; }
     else if (seated && (pc.problem || pc.upd)) dF -= 0.45;
@@ -650,7 +659,7 @@
     if (f.state !== "ok" && !sleeping() && phase === "play" && S.clock - (S.tempAskAt === undefined ? -999 : S.tempAskAt) >= 60) {
       S.tempAskAt = S.clock; const st = f.state; queue.push(() => tempDialog(st));
     }
-    if (P.social < 15 && chance(0.03)) say(P, "Hello?");
+    if (P.social < 15 && chance(0.03)) chatter(P, "Hello?");
     if (sleeping()) {
       if (S.clock >= P.sleepUntil || P.energy >= 90) wakeUp();
     } else if (P.energy <= 0) {
@@ -699,9 +708,9 @@
     }
     let said = 0;
     for (const n of shuffle(seatedNpcs())) {
-      if (said < 2 && chance(0.22)) { say(n, yellLine(), 2.5); said++; }
+      if (said < 2 && chance(0.22)) { chatter(n, yellLine(), 2.5); said++; }
     }
-    if (m.joined && P.act === "sit" && chance(0.15)) say(P, yellLine(), 2.5);
+    if (m.joined && P.act === "sit" && chance(0.15)) chatter(P, yellLine(), 2.5);
   }
   function callReady() {
     const c = S.call;
@@ -769,15 +778,15 @@
       const n = pick(c);
       S.solo = { n, game: pick(SOLO), end: S.clock + ri(25, 50) };
       n.st.pc.solo = S.solo.game;
-      say(n, pick(["Just one more quest.", "Don't mind me.", "It's a really good game."]), 4);
+      chatter(n, pick(["Just one more quest.", "Don't mind me.", "It's a really good game."]), 4);
       log(`${n.name} is playing ${S.solo.game}. A single-player game. At a LAN party.`);
       return;
     }
     if (s.n.gone || s.n.leaving || !s.n.st) { S.solo = null; S.nextSolo = S.clock + ri(120, 220); return; }
     if (S.clock >= s.end) { endSolo(); return; }
     let said = 0;
-    for (const m of shuffle(seatedNpcs())) if (m !== s.n && said < 2 && chance(0.2)) { say(m, pick(SOLO_ASK).replace("$g", s.game), 3); said++; }
-    if (chance(0.1)) say(s.n, pick(["It has a great story!", "Shh. Cutscene.", "I'm almost at the boss."]), 3);
+    for (const m of shuffle(seatedNpcs())) if (m !== s.n && said < 2 && chance(0.2)) { chatter(m, pick(SOLO_ASK).replace("$g", s.game), 3); said++; }
+    if (chance(0.1)) chatter(s.n, pick(["It has a great story!", "Shh. Cutscene.", "I'm almost at the boss."]), 3);
   }
 
   // ---------- global tick ----------
